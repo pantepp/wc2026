@@ -371,6 +371,8 @@ tr.has-legs:hover{background:rgba(255,255,255,.03)}
 .slip-status.st-won{color:#7ee787;border-color:rgba(126,231,135,.45)}
 .slip-status.st-lost{color:#ff7b72;border-color:rgba(255,123,114,.45)}
 .slip-status.st-pending{color:var(--lime);border-color:rgba(190,242,100,.35)}
+.st-cashout{color:#56d4dd;border-color:rgba(86,212,221,.45)}
+.st-void{color:#9aa4b2;border-color:rgba(154,164,178,.4)}
 .slip-leg{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 13px 9px 16px;border-bottom:1px solid rgba(31,41,55,.5);position:relative}
 .slip-leg:last-child{border-bottom:0}
 .slip-leg::before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:3px;border-radius:2px;background:var(--lime);opacity:.5}
@@ -685,7 +687,8 @@ const SEED_RTG_BETS=[
   {key:"rtg-mex-tg-o05-v2-20260611", match:"Mexico v South Africa", sel:"Mexico Team Total Goals Over 0.5 (Super Boost)", odds:"2.00", stake:"10", status:"won", book:"bet365"},
   {key:"rtg-mex-bb-260-20260611", match:"Mexico v South Africa", sel:"Bet Builder \u00b7 Mexico to win \u00b7 Over 1.5 goals \u00b7 both teams carded", odds:"2.60", stake:"100", status:"won", book:"bet365"},
   {key:"rtg-korcze-bb-240-20260612", match:"South Korea v Czechia", sel:"Bet Builder \u00b7 both teams to score \u00b7 Over 6 corners", odds:"2.40", stake:"100", status:"won", book:"bet365"},
-  {key:"rtg-canbih-bb-270-20260612", match:"Canada v Bosnia", sel:"Bet Builder \u00b7 Canada corners O3.5 \u00b7 Over 1.5 goals \u00b7 1X (Canada or draw) \u00b7 both teams carded", odds:"2.70", stake:"100", status:"pending", book:"Stoiximan"},
+  {key:"rtg-canbih-bb-270-20260612", match:"Canada v Bosnia", sel:"Bet Builder \u00b7 Canada corners O3.5 \u00b7 Over 1.5 goals \u00b7 1X (Canada or draw) \u00b7 both teams carded", odds:"2.70", stake:"100", status:"cashout", co:"243.26", book:"Stoiximan"},
+  {key:"rtg-usapar-bb-280-20260612", match:"USA v Paraguay", sel:"Bet Builder \u00b7 1X (USA or draw) \u00b7 Over 1.5 goals \u00b7 USA corners O3.5", odds:"2.80", stake:"100", status:"pending", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
   {key:"brk-mex-bb-1750-v2-20260611", match:"Mexico v South Africa", sel:"Bet Builder (13 legs) \u00b7 player shots/SoT & fouls multi (V\u00e1squez, Jim\u00e9nez, Qui\u00f1ones, Appollis, Mokoena, Gutierrez\u2026)", odds:"17.50", stake:"10", status:"lost", book:"Stoiximan", legs:["Johan Vásquez — 1+ attempt at goal","H. Quiñones — 1+ shot on target","Raúl Jiménez — 1+ shot on target","O. Appollis — 1+ attempt at goal","T. Mokoena — 1+ attempt at goal","Johan Vásquez — 1+ foul committed","H. Gallardo — 1+ foul committed","T. Mokoena — 1+ foul committed","Yaya Sithole — 1+ foul committed","B. Gutiérrez — 1+ shot on target","K. Mudau — 1+ foul won","O. Modiba — 1+ foul won","Raúl Jiménez — 1+ foul committed"]},
@@ -694,10 +697,11 @@ const SEED_BRICKS_BETS=[
   {key:"brk-korcze-bb-1000-20260612", match:"South Korea v Czechia", sel:"Bet Builder (6 legs) \u00b7 Son/Schick to score-or-assist \u00b7 Son & Schick SoT \u00b7 Czechia corners O3.5 \u00b7 1H goal O0.5 \u00b7 Chaloupek shot", odds:"10.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Son or Schick — one of the two to score or assist","Heung-Min Son — 1+ shot on target","Patrik Schick — 1+ shot on target","Over 3.5 Czechia corners","Over 0.5 first-half goals","Stepan Chaloupek — 1+ attempt at goal"]},
   {key:"brk-korcze-bb-640-20260612", match:"South Korea v Czechia", sel:"Bet Builder (4 legs) \u00b7 BTTS Yes \u00b7 Czechia fouls O15.5 \u00b7 S.Korea corners O3.5 \u00b7 Son SoT", odds:"6.40", stake:"10", status:"won", book:"Stoiximan", legs:["Both teams to score — Yes (GG)","Over 15.5 Czechia total fouls","Over 3.5 South Korea corners","Heung-Min Son — 1+ shot on target"]},
   {key:"brk-korcze-bb-4500-20260612", match:"South Korea v Czechia", sel:"Bet Builder (11 legs) \u00b7 tackles (Kang-in Lee, Sou\u010dek, Coufal, Tae-seok Lee) \u00b7 fouls won (Son, Hwang, Schick) \u00b7 fouls committed (In-beom Hwang, Tae-seok Lee) \u00b7 shots (Provod, Seol)", odds:"45.00", stake:"5", status:"lost", book:"Stoiximan", legs:["Kang-in Lee — 1+ total tackles","Tomáš Souček — 2+ total tackles","Vladimír Coufal — 1+ total tackles","Tae-seok Lee — 1+ total tackles","Heung-Min Son — 2+ fouls won","Hee-chan Hwang — 1+ fouls won","Patrik Schick — 1+ fouls won","In-beom Hwang — 1+ fouls committed","Tae-seok Lee — 1+ fouls committed","Lukáš Provod — 2+ attempts at goal","Young-woo Seol — 1+ attempt at goal"]},
-  {key:"brk-canbih-bb-1800-20260612", match:"Canada v Bosnia", sel:"Bet Builder (5 legs) \u00b7 Canada corners O6.5 \u00b7 both teams 2+ cards \u00b7 BTTS \u00b7 1H goal O0.5 \u00b7 1H Canada corners O2.5", odds:"18.00", stake:"5", status:"pending", book:"Stoiximan", legs:["Over 6.5 Canada corners","Both teams to receive 2+ cards","Both teams to score — Yes (GG)","Over 0.5 first-half goals","Over 2.5 first-half Canada corners"]},
+  {key:"brk-canbih-bb-1800-20260612", match:"Canada v Bosnia", sel:"Bet Builder (5 legs) \u00b7 Canada corners O6.5 \u00b7 both teams 2+ cards \u00b7 BTTS \u00b7 1H goal O0.5 \u00b7 1H Canada corners O2.5", odds:"18.00", stake:"5", status:"won", book:"Stoiximan", legs:["Over 6.5 Canada corners","Both teams to receive 2+ cards","Both teams to score — Yes (GG)","Over 0.5 first-half goals","Over 2.5 first-half Canada corners"]},
   {key:"brk-usapar-bb-1025-20260612", match:"USA v Paraguay", sel:"Bet Builder (6 legs) \u00b7 T.Adams 2+ fouls \u00b7 Balogun 3+ shots \u00b7 Robinson 1+ shot \u00b7 Almir\u00f3n 2+ shots \u00b7 Richards 1+ foul \u00b7 D.G\u00f3mez 1+ foul", odds:"10.25", stake:"10", status:"pending", book:"Stoiximan", legs:["Tyler Adams — 2+ fouls committed","Folarin Balogun — 3+ shots","Antonee Robinson — 1+ shot","Miguel Almirón — 2+ shots","Chris Richards — 1+ foul committed","Diego Gómez — 1+ foul committed"]},
   {key:"brk-usapar-bb-1750-20260612", match:"USA v Paraguay", sel:"Bet Builder (5 legs, +25% boost) \u00b7 G.G\u00f3mez 2+ tackles \u00b7 Pulisic 3+ shots \u00b7 USA to win \u00b7 Over 2.5 goals \u00b7 Pulisic to score", odds:"17.50", stake:"7", status:"pending", book:"Stoiximan", legs:["Gustavo Gómez — 2+ total tackles","Christian Pulisic — 3+ shots","USA — final result (to win)","Over 2.5 goals","Christian Pulisic — to score"]},
-  {key:"brk-canbih-bb-11000-20260612", match:"Canada v Bosnia", sel:"Bet Builder (3 legs) \u00b7 Laryea to be carded \u00b7 Muharemovi\u0107 to be carded \u00b7 Larin to be carded", odds:"110.00", stake:"3", status:"pending", book:"Stoiximan", legs:["Richie Laryea (Canada) — to be carded","T. Muharemović (Bosnia) — to be carded","Cyle Larin (Canada) — to be carded"]},
+  {key:"brk-canbih-bb-11000-20260612", match:"Canada v Bosnia", sel:"Bet Builder (3 legs) \u00b7 Laryea to be carded \u00b7 Muharemovi\u0107 to be carded \u00b7 Larin to be carded", odds:"110.00", stake:"3", status:"lost", book:"Stoiximan", legs:["Richie Laryea (Canada) — to be carded","T. Muharemović (Bosnia) — to be carded","Cyle Larin (Canada) — to be carded"]},
+  {key:"brk-usapar-bb-1950-20260612", match:"USA v Paraguay", sel:"Bet Builder (5 legs) \u00b7 Pulisic or Balogun to score/assist \u00b7 Over 8.5 corners \u00b7 USA to win \u00b7 Robinson 2+ fouls won \u00b7 Pulisic 2+ fouls won", odds:"19.50", stake:"5", status:"pending", book:"Stoiximan", legs:["Pulisic or Balogun — to score or assist","Over 8.5 total corners","USA — final result (to win)","Antonee Robinson — 2+ fouls won","Christian Pulisic — 2+ fouls won"]},
 ];
 const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08/06 (group bets)","stake":"1","status":"pending","legs":[
 {"match":"Mexico v South Africa (Grp A)","sel":"Winner & 4th: Mexico 1st, S. Africa 4th","odds":"3.15"},
@@ -748,6 +752,8 @@ const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08
 ]}];
 
 const SEED_UPDATES=[
+{"id":"CAN","key":"can-report-canbih-20260612","scoutPrepend":"📋 WC GROUP B (Fri 12/06, MD1 v Bosnia): CANADA 1-1 BOSNIA.\nCyle Larin 78' (off the bench) cancelled Jovo Lukić 21'. Dominant but wasteful: poss 61%, xG 1.25 v 0.98, shots 13-8, big chances 2-2, corners 9-4, passes 415-270.\nTop: Laryea 7.8, Eustaquio 7.1 (c), Johnston 7.0; David & Oluwaseyi quiet (5.3 / 5.2). Team 6.78. 1 point.\n➡ NEXT: Thu 18/06 v Qatar (Vancouver, BC Place); then Wed 24/06 v Switzerland (Vancouver).\n\n"},
+{"id":"BIH","key":"bih-report-canbih-20260612","scoutPrepend":"📋 WC GROUP B (Fri 12/06, MD1 v Canada): BOSNIA 1-1 CANADA.\nJovo Lukić 21' (started ahead of Džeko) gave the lead; Larin equalised 78'. Backs-to-the-wall point: poss 39%, xG 0.98, shots 8, corners 4, 20 fouls (3 yellows).\nTop: Katić 8.3, Muharemović 7.7, Lukić 7.4 (G), Bašić 7.4. Solid at the back. 1 point.\n➡ NEXT: Thu 18/06 v Switzerland (Inglewood, SoFi); then Wed 24/06 v Qatar (Seattle).\n\n"},
 {"id":"CAN","key":"can-confirmed-20260612","xi":{"formation":"4-4-2","names":["Crepeau","Johnston","De Fougerolles","Cornelius","Laryea","Buchanan","Kone","Eustaquio","Millar","J. David","Oluwaseyi"]},"note":"CONFIRMED XI (Sofascore, 12/06) — 4-4-2: Crépeau; Johnston, De Fougerolles, Cornelius, Laryea; Buchanan, Koné, Eustaquio (c), Millar; J. David & Oluwaseyi. Larin benched."},
 {"id":"BIH","key":"bih-confirmed-20260612","xi":{"formation":"4-4-2","names":["Vasilj","Dedic","Katic","Muharemovic","Kolasinac","Bajraktarevic","Tahirovic","Basic","Memic","Lukic","Demirovic"]},"note":"CONFIRMED XI (Sofascore, 12/06) — 4-4-2: Vasilj; Dedić, Katić, Muharemović, Kolašinac (c); Bajraktarević, Tahirović, Bašić, Memić; Lukić & Demirović. Džeko on the bench."},
 {"id":"PAR","key":"par-enciso-in-20260612","xiSwap":[{"from":"Mauricio","to":"Enciso"}],"note":"SorareInside / m12r1_ (upd 11/06): 4-4-2. UPDATE 11/06 — Julio Enciso (70%) now STARTS over Mauricio Espínola (30%): only a knock vs Nicaragua, not a muscle injury (per Alfaro); trained normally Thu and tested in the starting 11 alongside Sanabria. Front two Sanabria & Enciso. GK now settled — Gill (90%) clearly over Olivera (10%); Fernández 3rd."},
@@ -1605,7 +1611,7 @@ async function loadAll(){
       if(done) continue;
       const ex=state.rtg.bets.find(b=>b.match===sb.match && b.sel===sb.sel);
       if(ex){ if(sb.book && !ex.book) ex.book=sb.book; }
-      else { state.rtg.bets.push({match:sb.match,sel:sb.sel,odds:sb.odds,stake:sb.stake,status:sb.status||"pending",book:sb.book||""}); }
+      else { state.rtg.bets.push({match:sb.match,sel:sb.sel,odds:sb.odds,stake:sb.stake,status:sb.status||"pending",book:sb.book||"",co:sb.co||""}); }
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
       doSave("rtg");
     }
@@ -1726,6 +1732,37 @@ async function loadAll(){
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
+  // one-time: settle Canada v Bosnia bets — rtg @2.70 CASHED OUT (243.26), bricks @18 WON, @110 LOST (12/06)
+  {
+    const fk="wc2026:upd:settle-canbih-20260612"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      let chR=false,chB=false;
+      if(typeof SEED_RTG_BETS!=="undefined"){
+        const sb=SEED_RTG_BETS.find(b=>b.key==="rtg-canbih-bb-270-20260612");
+        if(sb){ const ex=state.rtg.bets.find(b=>b.match===sb.match && b.sel===sb.sel); if(ex && ex.status!=="cashout"){ ex.status="cashout"; ex.co="243.26"; chR=true; } }
+      }
+      if(chR) doSave("rtg");
+      if(typeof SEED_BRICKS_BETS!=="undefined"){
+        const w=SEED_BRICKS_BETS.find(b=>b.key==="brk-canbih-bb-1800-20260612");
+        if(w){ const ex=state.bricks.bets.find(b=>b.match===w.match && b.sel===w.sel); if(ex && ex.status!=="won"){ ex.status="won"; chB=true; } }
+        const l=SEED_BRICKS_BETS.find(b=>b.key==="brk-canbih-bb-11000-20260612");
+        if(l){ const ex=state.bricks.bets.find(b=>b.match===l.match && b.sel===l.sel); if(ex && ex.status!=="lost"){ ex.status="lost"; chB=true; } }
+      }
+      if(chB) doSave("bricks");
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Canada 1-1 Bosnia (m6) for Group B standings — 12/06
+  {
+    const fk="wc2026:upd:results-canbih-20260612"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m6||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="1"||cur.as!=="1"){ cur.hs="1"; cur.as="1"; state.fixtures.m6=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
   if(typeof SEED_UPDATES!=="undefined"){
     for(const u of SEED_UPDATES){
       const fk="wc2026:upd:"+u.key; let done=false;
@@ -1801,13 +1838,13 @@ function viewOverview(){
   const played=FIX.filter(f=>{const x=state.fixtures[f.id];return x&&num(x.hs)!==null&&num(x.as)!==null;}).length;
   const _pc=p=>p.legs.reduce((m,l)=>{const o=parseFloat(l.odds)||0;return o>0?m*o:m;},1);
   const _all=[...state.parlays,...state.rtg.bets,...state.bricks.bets];
-  const picks=_all.length, settled=_all.filter(b=>b.status==="won"||b.status==="lost");
+  const picks=_all.length, settled=_all.filter(b=>b.status==="won"||b.status==="lost"||b.status==="cashout");
   const won=settled.filter(b=>b.status==="won").length;
   const staked=_all.reduce((s,b)=>s+(parseFloat(b.stake)||0),0);
   const ret=state.parlays.reduce((s,p)=>{const st=parseFloat(p.stake)||0,c=_pc(p);return s+(p.status==="won"?st*c:p.status==="void"?st:0);},0)
-    +[...state.rtg.bets,...state.bricks.bets].reduce((s,b)=>{const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;return s+(b.status==="won"?st*o:b.status==="void"?st:0);},0);
+    +[...state.rtg.bets,...state.bricks.bets].reduce((s,b)=>{const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;return s+(b.status==="won"?st*o:b.status==="void"?st:b.status==="cashout"?(parseFloat(b.co)||0):0);},0);
   const pl=state.parlays.reduce((s,p)=>{const st=parseFloat(p.stake)||0,c=_pc(p);return s+(p.status==="won"?st*(c-1):p.status==="lost"?-st:0);},0)
-    +[...state.rtg.bets,...state.bricks.bets].reduce((s,b)=>{const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;return s+(b.status==="won"?st*(o-1):b.status==="lost"?-st:0);},0);
+    +[...state.rtg.bets,...state.bricks.bets].reduce((s,b)=>{const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;return s+(b.status==="won"?st*(o-1):b.status==="lost"?-st:b.status==="cashout"?((parseFloat(b.co)||0)-st):0);},0);
   const now=new Date();
   const todayStart=new Date(now.getFullYear(),now.getMonth(),now.getDate());
   const upcoming=FIX.map(f=>({f,dt:etToDate(f.date,f.time)||new Date(f.date+"T12:00:00")})).filter(o=>o.dt>now).sort((a,b)=>a.dt-b.dt).slice(0,8);
@@ -2763,12 +2800,13 @@ function viewBetting(){
     const rows=bsorted.map((b,i)=>{
       const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;
       dStakedX+=st;
-      if(b.status==="won") dRetX+=st*o; else if(b.status==="void") dRetX+=st;
-      const delta=b.status==="won"?st*(o-1):b.status==="lost"?-st:0;
+      const coRet=parseFloat(b.co)||0;
+      if(b.status==="won") dRetX+=st*o; else if(b.status==="void") dRetX+=st; else if(b.status==="cashout") dRetX+=coRet;
+      const delta=b.status==="won"?st*(o-1):b.status==="lost"?-st:b.status==="cashout"?(coRet-st):0;
       bal+=delta;
-      const settled=b.status==="won"||b.status==="lost";
+      const settled=b.status==="won"||b.status==="lost"||b.status==="cashout";
       const cum=bal-s0;
-      const stat=(b.status==="won"||b.status==="lost"||b.status==="void")?b.status:"pending";
+      const stat=(b.status==="won"||b.status==="lost"||b.status==="void"||b.status==="cashout")?b.status:"pending";
       const legs=Array.isArray(b.legs)?b.legs:[];
       const hasLegs=legs.length>0;
       const rid=idp+"-"+i;
@@ -2806,7 +2844,7 @@ function viewBetting(){
   const allRet=Lret+rtg.ret+brk.ret;
   const cumulative=Lprofit+rtg.profit+brk.profit;          // headline Cumulative +/−
   const allBalance=Lbalance+rtg.balance+brk.balance;       // overall standing
-  const allSettled2=[...P,...RB,...BB].filter(b=>b.status==="won"||b.status==="lost");
+  const allSettled2=[...P,...RB,...BB].filter(b=>b.status==="won"||b.status==="lost"||b.status==="cashout");
   const wonAll2=allSettled2.filter(b=>b.status==="won").length;
   const roiAll=allStaked?(cumulative/allStaked*100):0, wrAll=allSettled2.length?(wonAll2/allSettled2.length*100):0;
 
