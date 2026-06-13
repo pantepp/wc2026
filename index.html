@@ -689,7 +689,7 @@ const SEED_RTG_BETS=[
   {key:"rtg-korcze-bb-240-20260612", match:"South Korea v Czechia", sel:"Bet Builder \u00b7 both teams to score \u00b7 Over 6 corners", odds:"2.40", stake:"100", status:"won", book:"bet365"},
   {key:"rtg-canbih-bb-270-20260612", match:"Canada v Bosnia", sel:"Bet Builder \u00b7 Canada corners O3.5 \u00b7 Over 1.5 goals \u00b7 1X (Canada or draw) \u00b7 both teams carded", odds:"2.70", stake:"100", status:"cashout", co:"243.26", book:"Stoiximan"},
   {key:"rtg-usapar-bb-280-20260612", match:"USA v Paraguay", sel:"Bet Builder \u00b7 1X (USA or draw) \u00b7 Over 1.5 goals \u00b7 USA corners O3.5", odds:"2.80", stake:"100", status:"lost", book:"Stoiximan"},
-  {key:"rtg-qatsui-bb-245-20260613", match:"Qatar v Switzerland", sel:"Bet Builder \u00b7 Switzerland -1 (handicap) \u00b7 No BTTS (NG)", odds:"2.45", stake:"100", status:"pending", book:"Stoiximan"},
+  {key:"rtg-qatsui-bb-245-20260613", match:"Qatar v Switzerland", sel:"Bet Builder \u00b7 Switzerland to win \u00b7 Over 1.5 goals \u00b7 No BTTS (NG)", odds:"2.30", stake:"100", status:"pending", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
   {key:"brk-mex-bb-1750-v2-20260611", match:"Mexico v South Africa", sel:"Bet Builder (13 legs) \u00b7 player shots/SoT & fouls multi (V\u00e1squez, Jim\u00e9nez, Qui\u00f1ones, Appollis, Mokoena, Gutierrez\u2026)", odds:"17.50", stake:"10", status:"lost", book:"Stoiximan", legs:["Johan Vásquez — 1+ attempt at goal","H. Quiñones — 1+ shot on target","Raúl Jiménez — 1+ shot on target","O. Appollis — 1+ attempt at goal","T. Mokoena — 1+ attempt at goal","Johan Vásquez — 1+ foul committed","H. Gallardo — 1+ foul committed","T. Mokoena — 1+ foul committed","Yaya Sithole — 1+ foul committed","B. Gutiérrez — 1+ shot on target","K. Mudau — 1+ foul won","O. Modiba — 1+ foul won","Raúl Jiménez — 1+ foul committed"]},
@@ -703,6 +703,7 @@ const SEED_BRICKS_BETS=[
   {key:"brk-usapar-bb-1750-20260612", match:"USA v Paraguay", sel:"Bet Builder (5 legs, +25% boost) \u00b7 G.G\u00f3mez 2+ tackles \u00b7 Pulisic 3+ shots \u00b7 USA to win \u00b7 Over 2.5 goals \u00b7 Pulisic to score", odds:"17.50", stake:"7", status:"lost", book:"Stoiximan", legs:["Gustavo Gómez — 2+ total tackles","Christian Pulisic — 3+ shots","USA — final result (to win)","Over 2.5 goals","Christian Pulisic — to score"]},
   {key:"brk-canbih-bb-11000-20260612", match:"Canada v Bosnia", sel:"Bet Builder (3 legs) \u00b7 Laryea to be carded \u00b7 Muharemovi\u0107 to be carded \u00b7 Larin to be carded", odds:"110.00", stake:"3", status:"lost", book:"Stoiximan", legs:["Richie Laryea (Canada) — to be carded","T. Muharemović (Bosnia) — to be carded","Cyle Larin (Canada) — to be carded"]},
   {key:"brk-usapar-bb-1950-20260612", match:"USA v Paraguay", sel:"Bet Builder (5 legs) \u00b7 Pulisic or Balogun to score/assist \u00b7 Over 8.5 corners \u00b7 USA to win \u00b7 Robinson 2+ fouls won \u00b7 Pulisic 2+ fouls won", odds:"19.50", stake:"5", status:"lost", book:"Stoiximan", legs:["Pulisic or Balogun — to score or assist","Over 8.5 total corners","USA — final result (to win)","Antonee Robinson — 2+ fouls won","Christian Pulisic — 2+ fouls won"]},
+  {key:"brk-qatsui-bb-900-20260613", match:"Qatar v Switzerland", sel:"Bet Builder (3 legs, €5 coupon) \u00b7 Ndoye to score anytime \u00b7 HT/FT Switzerland/Switzerland \u00b7 Qatar over 2.5 team cards", odds:"9.00", stake:"10", status:"pending", book:"Stoiximan", legs:["Dan Ndoye — to score anytime","HT/FT — Switzerland / Switzerland","Qatar — over 2.5 team cards"]},
 ];
 const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08/06 (group bets)","stake":"1","status":"pending","legs":[
 {"match":"Mexico v South Africa (Grp A)","sel":"Winner & 4th: Mexico 1st, S. Africa 4th","odds":"3.15"},
@@ -1794,6 +1795,16 @@ async function loadAll(){
         });
       }
       if(chB) doSave("bricks");
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: replace Qatar v Switzerland rtg bet with updated builder @2.30 (Switzerland win + O1.5 + NG) — 13/06
+  {
+    const fk="wc2026:upd:replace-qatsui-rtg-20260613"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const ex=state.rtg.bets.find(b=>b.match==="Qatar v Switzerland");
+      if(ex){ ex.sel="Bet Builder \u00b7 Switzerland to win \u00b7 Over 1.5 goals \u00b7 No BTTS (NG)"; ex.odds="2.30"; doSave("rtg"); }
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
