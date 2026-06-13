@@ -620,7 +620,7 @@ const FIX = [
 ["C","2026-06-24","6:00 PM ET","SCO","BRA","Hard Rock Stadium, Miami"],
 ["C","2026-06-24","6:00 PM ET","MAR","HAI","Mercedes-Benz Stadium, Atlanta"],
 ["D","2026-06-12","9:00 PM ET","USA","PAR","SoFi Stadium, Inglewood"],
-["D","2026-06-13","12:00 AM ET","AUS","TUR","BC Place, Vancouver"],
+["D","2026-06-14","12:00 AM ET","AUS","TUR","BC Place, Vancouver"],
 ["D","2026-06-19","3:00 PM ET","USA","AUS","Lumen Field, Seattle"],
 ["D","2026-06-19","11:00 PM ET","TUR","PAR","Levi's Stadium, Santa Clara"],
 ["D","2026-06-25","10:00 PM ET","TUR","USA","SoFi Stadium, Inglewood"],
@@ -1866,7 +1866,10 @@ function render(){
 /* ---- OVERVIEW ---- */
 function viewOverview(){
   const _nowCd=new Date();
-  const _nextFix=FIX.map(f=>({f,dt:etToDate(f.date,f.time)||new Date(f.date+"T12:00:00")})).filter(o=>o.dt>_nowCd).sort((a,b)=>a.dt-b.dt)[0];
+  const _todayISO=new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Athens"});
+  const _unplayed=id=>{const x=state.fixtures[id];return !(x&&num(x.hs)!==null&&num(x.as)!==null);};
+  const _isNext=o=> o.dt>_nowCd || (grDateISO(o.f.date,o.f.time)===_todayISO && _unplayed(o.f.id));
+  const _nextFix=FIX.map(f=>({f,dt:etToDate(f.date,f.time)||new Date(f.date+"T12:00:00")})).filter(_isNext).sort((a,b)=>a.dt-b.dt)[0];
   const _target=_nextFix?_nextFix.dt:KICKOFF;
   const diff=_target-new Date(); const d=Math.max(0,Math.floor(diff/864e5)),h=Math.max(0,Math.floor(diff%864e5/36e5)),m=Math.max(0,Math.floor(diff%36e5/6e4));
   const played=FIX.filter(f=>{const x=state.fixtures[f.id];return x&&num(x.hs)!==null&&num(x.as)!==null;}).length;
@@ -1881,7 +1884,7 @@ function viewOverview(){
     +[...state.rtg.bets,...state.bricks.bets].reduce((s,b)=>{const st=parseFloat(b.stake)||0,o=parseFloat(b.odds)||0;return s+(b.status==="won"?st*(o-1):b.status==="lost"?-st:b.status==="cashout"?((parseFloat(b.co)||0)-st):0);},0);
   const now=new Date();
   const todayStart=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-  const upcoming=FIX.map(f=>({f,dt:etToDate(f.date,f.time)||new Date(f.date+"T12:00:00")})).filter(o=>o.dt>now).sort((a,b)=>a.dt-b.dt).slice(0,8);
+  const upcoming=FIX.map(f=>({f,dt:etToDate(f.date,f.time)||new Date(f.date+"T12:00:00")})).filter(_isNext).sort((a,b)=>a.dt-b.dt).slice(0,8);
   const ups = upcoming.length?upcoming.map(o=>`<div class="upcoming-row up-click" data-matchup="${o.f.id}" title="Open AI matchup"><span class="when">${grDate(o.f.date,o.f.time)}</span><span class="gtag">${o.f.group}</span>${teamChip(o.f.home)}<span class="vs mono">v</span>${teamChip(o.f.away)}<span class="mono" style="margin-left:auto;color:var(--lime)">${gr(o.f.date,o.f.time)}</span><span class="up-go">📊</span></div>`).join(""):'<div class="empty">Group stage complete — knockouts next.</div>';
   const nm=upcoming[0];
   const nextBlock = nm?`<div class="next-match" data-matchup="${nm.f.id}">
