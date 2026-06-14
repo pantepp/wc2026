@@ -691,7 +691,8 @@ const SEED_RTG_BETS=[
   {key:"rtg-usapar-bb-280-20260612", match:"USA v Paraguay", sel:"Bet Builder \u00b7 1X (USA or draw) \u00b7 Over 1.5 goals \u00b7 USA corners O3.5", odds:"2.80", stake:"100", status:"lost", book:"Stoiximan"},
   {key:"rtg-qatsui-bb-245-20260613", match:"Qatar v Switzerland", sel:"Bet Builder \u00b7 Switzerland to win \u00b7 Over 1.5 goals \u00b7 No BTTS (NG)", odds:"2.30", stake:"100", status:"lost", book:"Stoiximan"},
   {key:"rtg-bramar-o25-20260614", match:"Brazil v Morocco", sel:"Over 2.5 goals (total)", odds:"2.20", stake:"100", status:"lost", book:"Stoiximan"},
-  {key:"rtg-haisco-sco1-20260614", match:"Haiti v Scotland", sel:"Scotland -1 (handicap result)", odds:"2.30", stake:"100", status:"pending", book:"bet365"},
+  {key:"rtg-haisco-sco1-20260614", match:"Haiti v Scotland", sel:"Scotland -1 (handicap result)", odds:"2.30", stake:"100", status:"lost", book:"bet365"},
+  {key:"rtg-austur-bb-207-20260614", match:"Australia v Turkey", sel:"Bet Builder \u00b7 Turkey corners O4.5 \u00b7 X2 (draw or Turkey) \u00b7 Turkey -0.5 corner handicap", odds:"2.07", stake:"100", status:"lost", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
   {key:"brk-mex-bb-1750-v2-20260611", match:"Mexico v South Africa", sel:"Bet Builder (13 legs) \u00b7 player shots/SoT & fouls multi (V\u00e1squez, Jim\u00e9nez, Qui\u00f1ones, Appollis, Mokoena, Gutierrez\u2026)", odds:"17.50", stake:"10", status:"lost", book:"Stoiximan", legs:["Johan Vásquez — 1+ attempt at goal","H. Quiñones — 1+ shot on target","Raúl Jiménez — 1+ shot on target","O. Appollis — 1+ attempt at goal","T. Mokoena — 1+ attempt at goal","Johan Vásquez — 1+ foul committed","H. Gallardo — 1+ foul committed","T. Mokoena — 1+ foul committed","Yaya Sithole — 1+ foul committed","B. Gutiérrez — 1+ shot on target","K. Mudau — 1+ foul won","O. Modiba — 1+ foul won","Raúl Jiménez — 1+ foul committed"]},
@@ -759,6 +760,10 @@ const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08
 ]}];
 
 const SEED_UPDATES=[
+{"id":"AUS","key":"aus-report-austur-20260614","scoutPrepend":"📋 WC GROUP D (Sun 14/06, MD1 v Türkiye): AUSTRALIA 2-0 TÜRKİYE.\nSmash-and-grab masterclass — just 28% possession, out-shot 9-30, but ruthless and heroic. Irankunda 27', Metcalfe 75'. GK Paul Beach the hero (8 saves, 9.1!).\nTop: Beach 9.1, Metcalfe 7.8 (G), Circati 7.7, Souttar 7.5 (c), Irankunda 7.4 (G). Team 7.17. 3 points.\n➡ NEXT: Fri 19/06 v USA; then Thu 25/06 v Paraguay.\n\n"},
+{"id":"TUR","key":"tur-report-austur-20260614","scoutPrepend":"📋 WC GROUP D (Sun 14/06, MD1 v Australia): TÜRKİYE 0-2 AUSTRALIA.\nTotal domination, nothing to show — 72% ball, 30 shots, xG 1.36, beaten by a wall (Beach 9.1) and own profligacy. Aktürkoğlu woeful (5.6).\nTop: Yüksek 7.4, Çalhanoğlu 7.3 (c), Bardakcı & Demiral 6.7. Team 6.58. 0 points.\n➡ NEXT: Fri 19/06 v Paraguay; then Thu 25/06 v USA.\n\n"},
+{"id":"HAI","key":"hai-report-haisco-20260614","scoutPrepend":"📋 WC GROUP C (Sat 13/06, MD1 v Scotland): HAITI 0-1 SCOTLAND.\nUnlucky — Haiti had more shots (15-9) and matched the xG (1.05-1.05), but John McGinn's 28' settled it. Bright going forward, wasteful in the box.\nTop: Bellegarde 7.3, Jean Jacques 7.1, Adé & Expérience 7.0. Team 6.74. 0 points.\n➡ NEXT: Fri 19/06 v Brazil (Philadelphia); then Wed 24/06 v Morocco (Atlanta).\n\n"},
+{"id":"SCO","key":"sco-report-haisco-20260614","scoutPrepend":"📋 WC GROUP C (Sat 13/06, MD1 v Haiti): SCOTLAND 1-0 HAITI.\nJohn McGinn 28' the difference in a scrappy, even game (xG 1.05-1.05; out-shot 9-15 but more clinical). Job done.\nTop: Ferguson 7.6, McGinn 7.5 (G), Hanley 7.5, Robertson 7.2 (c), Gunn 7.2. Team 6.93. 3 points, top of Group C.\n➡ NEXT: Fri 19/06 v Morocco (Foxboro); then Wed 24/06 v Brazil (Miami).\n\n"},
 {"id":"BRA","key":"bra-report-bramar-20260614","scoutPrepend":"📋 WC GROUP C (Sat 13/06, MD1 v Morocco): BRAZIL 1-1 MOROCCO.\nVinícius Jr 32' (8.0, the standout) cancelled Saibari's 21' opener — but Brazil were second-best on chances (xG 1.27 v 1.52, big chances 1-2, shots 13-14). Flat night for the front line.\nTop: Vinícius Jr 8.0, Marquinhos 7.3 (c), D. Santos 7.2, Magalhães 7.1. 1 point.\n➡ NEXT: Fri 19/06 v Haiti (Philadelphia); then Wed 24/06 v Scotland (Miami).\n\n"},
 {"id":"MAR","key":"mar-report-bramar-20260614","scoutPrepend":"📋 WC GROUP C (Sat 13/06, MD1 v Brazil): MOROCCO 1-1 BRAZIL.\nHuge statement — Ismael Saibari 21' (7.6) put them ahead and they out-chanced Brazil (xG 1.52 v 1.27, big chances 2-1). Vinícius levelled 32' but a deserved point against the favourites.\nTop: Saibari 7.6, Hakimi 7.1 (c), Bouaddi & Khannouss 7.0, Bono 6.9 (4 saves). 1 big point.\n➡ NEXT: Fri 19/06 v Scotland (Foxboro); then Wed 24/06 v Haiti (Atlanta).\n\n"},
 {"id":"QAT","key":"qat-report-qatsui-20260613","scoutPrepend":"📋 WC GROUP B (Sat 13/06, MD1 v Switzerland): QATAR 1-1 SWITZERLAND.\nSmash-and-grab point — Boualem Khoukhi 90'+4 cancelled Embolo's 17' penalty. Hugely outplayed (poss 32%, xG 0.76 v 3.24, shots 7-26, corners 3-10) but keeper Abunad was immense (8.5, 5 saves).\nTop: Abunad 8.5, Oui 8.1, Al-Amin 7.7, Khoukhi 7.4 (c). Team 6.80. 1 precious point.\n➡ NEXT: Thu 18/06 v Canada (Vancouver, BC Place); then Wed 24/06 v Bosnia (Seattle).\n\n"},
@@ -1872,6 +1877,36 @@ async function loadAll(){
     if(!done){
       const cur=state.fixtures.m12||{hs:"",as:"",pred:"",note:""};
       if(cur.hs!=="1"||cur.as!=="1"){ cur.hs="1"; cur.as="1"; state.fixtures.m12=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Haiti v Scotland rtg bet LOST — 14/06
+  {
+    const fk="wc2026:upd:settle-haisco-20260614"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const ex=state.rtg.bets.find(b=>b.match==="Haiti v Scotland");
+      if(ex && ex.status==="pending"){ ex.status="lost"; doSave("rtg"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Haiti 0-1 Scotland (m13) Group C standings — 14/06
+  {
+    const fk="wc2026:upd:results-haisco-20260614"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m13||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="0"||cur.as!=="1"){ cur.hs="0"; cur.as="1"; state.fixtures.m13=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Australia 2-0 Turkey (m19) Group D standings — 14/06
+  {
+    const fk="wc2026:upd:results-austur-20260614"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m19||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="2"||cur.as!=="0"){ cur.hs="2"; cur.as="0"; state.fixtures.m19=cur; doSave("fixtures"); }
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
@@ -3018,7 +3053,7 @@ function viewBetting(){
   const Lbalance=Lstaked+Lprofit;
 
   // ---- shared daily-table renderer (Road to Glory + Bricks share the same shape) · read-only report ----
-  const BET_FIX={"Mexico v South Africa":"m0","South Korea v Czechia":"m1","Canada v Bosnia":"m6","USA v Paraguay":"m18","Qatar v Switzerland":"m7","Brazil v Morocco":"m12","Haiti v Scotland":"m13"};
+  const BET_FIX={"Mexico v South Africa":"m0","South Korea v Czechia":"m1","Canada v Bosnia":"m6","USA v Paraguay":"m18","Qatar v Switzerland":"m7","Brazil v Morocco":"m12","Haiti v Scotland":"m13","Australia v Turkey":"m19"};
   const betKick=(m)=>{const fid=BET_FIX[m];if(!fid)return Infinity;const f=FIX.find(x=>x.id===fid);if(!f)return Infinity;const dt=etToDate(f.date,f.time)||new Date(f.date+"T12:00:00");return dt.getTime();};
   function dailyTable(bets, startVal, idp){
     idp = idp || "x";
