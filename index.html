@@ -656,7 +656,7 @@ const FIX = [
 ["I","2026-06-26","3:00 PM ET","NOR","FRA","Gillette Stadium, Foxborough"],
 ["I","2026-06-26","3:00 PM ET","SEN","IRQ","BMO Field, Toronto"],
 ["J","2026-06-16","9:00 PM ET","ARG","ALG","Arrowhead Stadium, Kansas City"],
-["J","2026-06-16","12:00 AM ET","AUT","JOR","Levi's Stadium, Santa Clara"],
+["J","2026-06-17","12:00 AM ET","AUT","JOR","Levi's Stadium, Santa Clara"],
 ["J","2026-06-22","1:00 PM ET","ARG","AUT","AT&T Stadium, Arlington"],
 ["J","2026-06-22","11:00 PM ET","JOR","ALG","Levi's Stadium, Santa Clara"],
 ["J","2026-06-27","10:00 PM ET","JOR","ARG","AT&T Stadium, Arlington"],
@@ -773,6 +773,18 @@ const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08
 ]}];
 
 const SEED_UPDATES=[
+{"id":"SCO","key":"sco-xi-actual-20260615","xi":{"formation":"4-4-2","names":["Gunn","Hickey","Hanley","Hendry","Robertson","Doak","McTominay","Ferguson","McGinn","Adams","Shankland"]}},
+{"id":"HAI","key":"hai-xi-actual-20260615","xi":{"formation":"4-4-2","names":["Placide","Arcus","Adé","Delcroix","Expérience","Deedson","Jean Jacques","Bellegarde","Providence","Pierrot","Isidor"]}},
+{"id":"AUS","key":"aus-xi-actual-20260615","xi":{"formation":"5-4-1","names":["Beach","Italiano","Circati","Souttar","Burgess","Bos","Metcalfe","O'Neill","Okon-Engstler","Irankunda","Touré"]}},
+{"id":"TUR","key":"tur-xi-actual-20260615","xi":{"formation":"4-2-3-1","names":["Çakır","Kadıoğlu","Bardakcı","Demiral","Çelik","Çalhanoğlu","Yüksek","Yılmaz","Kökçü","Güler","Aktürkoğlu"]}},
+{"id":"GER","key":"ger-xi-actual-20260615","xi":{"formation":"4-2-3-1","names":["Neuer","Kimmich","Tah","Schlotterbeck","Brown","Pavlovic","Nmecha","Wirtz","Musiala","Sané","Havertz"]}},
+{"id":"CUW","key":"cuw-xi-actual-20260615","xi":{"formation":"4-4-2","names":["Room","Floranus","Bazoer","Obispo","Fonville","Comencencia","L. Bacuna","Chong","Hansen","Locadia","J. Bacuna"]}},
+{"id":"CIV","key":"civ-xi-actual-20260615","xi":{"formation":"4-4-2","names":["Y. Fofana","Doué","Singo","Agbadou","Konan","Diomande","Kessié","S. Fofana","Touré","Pépé","Wahi"]}},
+{"id":"ECU","key":"ecu-xi-actual-20260615","xi":{"formation":"4-4-2","names":["Galíndez","Hincapié","Pacho","Ordóñez","Franco","Minda","Vite","Caicedo","Yeboah","Valencia","Plata"]}},
+{"id":"NED","key":"ned-xi-actual-20260615","xi":{"formation":"4-3-3","names":["Verbruggen","Dumfries","van Hecke","van Dijk","van de Ven","Gravenberch","de Jong","Reijnders","Summerville","Malen","Gakpo"]}},
+{"id":"JPN","key":"jpn-xi-actual-20260615","xi":{"formation":"3-4-2-1","names":["Suzuki","H. Itō","Taniguchi","Watanabe","Nakamura","Kamada","Sano","Doan","Maeda","Kubo","Ueda"]}},
+{"id":"SWE","key":"swe-xi-actual-20260615","xi":{"formation":"3-4-1-2","names":["Nordfeldt","Lagerbielke","Hien","Lindelöf","Bernhardsson","Karlström","Nygren","Gudmundsson","Ayari","Gyökeres","Isak"]}},
+{"id":"TUN","key":"tun-xi-actual-20260615","xi":{"formation":"5-3-2","names":["Chamakh","Abdi","Ben Hmida","Talbi","Rekik","Valéry","Mejbri","Skhiri","Khedira","Slimane","Saad"]}},
 {"id":"SWE","key":"swe-report-swetun-20260615","scoutPrepend":"📋 WC GROUP F (Sun 14/06, MD1 v Tunisia): SWEDEN 5-1 TUNISIA.\nRampant — xG 1.33 v 0.28, four big chances. Ayari brace (7', 90+6), Isak 30', Gyökeres 59', Svanberg 84'. Rekik's 43' a mere consolation.\nTop: Isak 8.8 (G), Ayari 8.7 (2G), Gyökeres 8.2 (G). Team 7.18. 3 points.\n➡ NEXT: Sat 20/06 v Netherlands (Houston); then Thu 25/06 v Japan (Arlington).\n\n"},
 {"id":"TUN","key":"tun-report-swetun-20260615","scoutPrepend":"📋 WC GROUP F (Sun 14/06, MD1 v Sweden): TUNISIA 1-5 SWEDEN.\nThrashed — Rekik's 43' aside, no answers (xG 0.28, 0 big chances). GK Chamakh torrid (4.3), defence overrun.\nTop: Mejbri 7.2, Rekik 7.2 (G), Talbi 7.0. Team 6.23. 0 points.\n➡ NEXT: Sat 20/06 v Japan (Monterrey); then Thu 25/06 v Netherlands (Kansas City).\n\n"},
 {"id":"CIV","key":"civ-report-civecu-20260615","scoutPrepend":"📋 WC GROUP E (Sun 14/06, MD1 v Ecuador): IVORY COAST 1-0 ECUADOR.\nLate smash-and-grab — Amad Diallo 90' off the bench settled a tight one. Edged xG 1.68 v 1.03, 15 shots. Diomande superb.\nTop: Diomande 8.2, Singo 7.7, Agbadou 7.6, Doué/Konan/Kessié 7.2. Team 7.07. 3 points.\n➡ NEXT: Sat 20/06 v Germany (Toronto); then Thu 25/06 v Curaçao (Philadelphia).\n\n"},
@@ -2506,6 +2518,60 @@ const MATCHREF = { m0:"Wilton Sampaio", m1:"Amin Mohamed", m6:"Facundo Tello", m
   m7:"Héctor Said Martínez", m12:"Slavko Vinčić", m13:"Mustapha Ghorbal", m19:"Jesús Valenzuela",
   m24:"Jalal Jayed", m25:"François Letexier", m30:"Ismail Elfath", m31:"Yael Falcón Pérez",
   m36:"Ramon Abatti", m37:"César Ramos", m42:"Adham Makhadmeh", m43:"Maurizio Mariani" };
+const MATCHINFO = {
+  m0:{poss:[61,39],xg:[1.41,0.07],sh:[16,3],
+    sc:[],
+    rH:[],rA:[]},
+  m1:{poss:[62,38],xg:[2.30,0.83],big:[4,1],sh:[15,7],sv:[3,4],cor:[4,5],pa:[541,327],
+    sc:[{t:"CZE",p:"Krejčí",m:"59'"},{t:"KOR",p:"Hwang In-beom",m:"67'"},{t:"KOR",p:"Oh Hyeon-gyu",m:"80'"}],
+    rH:[],rA:[]},
+  m6:{poss:[61,39],xg:[1.25,0.98],big:[2,2],sh:[13,8],cor:[9,4],pa:[415,270],
+    sc:[{t:"BIH",p:"Lukić",m:"21'"},{t:"CAN",p:"Larin",m:"78'"}],
+    rH:[["Laryea",7.8],["Eustaquio",7.1],["Johnston",7.0],["David",5.3],["Oluwaseyi",5.2]],
+    rA:[["Katić",8.3],["Muharemović",7.7],["Lukić",7.4],["Bašić",7.4]]},
+  m7:{poss:[32,68],xg:[0.76,3.24],sh:[7,26],cor:[3,10],
+    sc:[{t:"SUI",p:"Embolo",m:"17' (pen)"},{t:"QAT",p:"Khoukhi",m:"90'+4"}],
+    rH:[["Abunad",8.5],["Oui",8.1],["Al-Amin",7.7],["Khoukhi",7.4]],
+    rA:[["Rodriguez",7.6],["Kobel",7.5],["Vargas",7.5],["Aebischer",7.4],["Xhaka",7.2]]},
+  m12:{poss:[51,49],xg:[1.27,1.52],big:[1,2],sh:[13,14],sv:[2,4],cor:[6,2],pa:[512,487],
+    sc:[{t:"MAR",p:"Saibari",m:"21'"},{t:"BRA",p:"Vinícius Jr",m:"32'"}],
+    rH:[["Vinícius Jr",8.0],["Marquinhos",7.3],["D. Santos",7.2],["Magalhães",7.1]],
+    rA:[["Saibari",7.6],["Hakimi",7.1],["Bouaddi",7.0],["Khannouss",7.0],["Bono",6.9]]},
+  m18:{poss:[65,35],xg:[1.34,0.47],big:[4,1],sh:[16,9],
+    sc:[{t:"USA",p:"Bobadilla (OG)",m:"7'"},{t:"USA",p:"Balogun",m:"31'"},{t:"USA",p:"Balogun",m:"45'+5"},{t:"PAR",p:"Mauricio",m:"73'"},{t:"USA",p:"Reyna",m:"90'+8"}],
+    rH:[["Balogun",9.1],["Ream",7.6],["Tillman",7.5],["Pulišić",7.4]],
+    rA:[["Enciso",7.3],["Cubas",6.9],["Gill",6.1],["Bobadilla",5.4],["Alonso",5.3]]},
+  m13:{poss:[54,46],xg:[1.05,1.05],big:[1,2],sh:[15,9],sv:[1,2],cor:[4,3],fl:[23,21],pa:[431,374],tk:[12,12],fk:[21,23],
+    teamR:[6.74,6.93],
+    sc:[{t:"SCO",p:"McGinn",m:"28'"}],
+    rH:[["Placide",6.9],["Arcus",6.3],["Adé",7.0],["Delcroix",6.9],["Expérience",7.0],["Deedson",6.4],["Jean Jacques",7.1],["Bellegarde",7.3],["Providence",6.9],["Pierrot",6.8],["Isidor",6.2]],
+    rA:[["Gunn",7.2],["Hickey",7.0],["Hanley",7.5],["Hendry",7.1],["Robertson",7.2],["Doak",7.2],["McTominay",6.4],["Ferguson",7.6],["McGinn",7.5],["Adams",6.5],["Shankland",6.5]]},
+  m19:{poss:[28,72],xg:[1.18,1.36],big:[1,2],sh:[9,30],sv:[8,2],cor:[5,8],fl:[12,4],pa:[271,704],tk:[15,12],fk:[4,12],yc:[0,0],
+    teamR:[7.17,6.58],
+    sc:[{t:"AUS",p:"Irankunda",m:"27'"},{t:"AUS",p:"Metcalfe",m:"75'"}],
+    rH:[["Beach",9.1],["Italiano",7.0],["Circati",7.7],["Souttar",7.5],["Burgess",7.3],["Bos",6.9],["Metcalfe",7.8],["O'Neill",7.1],["Okon-Engstler",7.3],["Irankunda",7.4],["Touré",6.4]],
+    rA:[["Çakır",6.2],["Kadıoğlu",6.5],["Bardakcı",6.7],["Demiral",6.7],["Çelik",6.2],["Çalhanoğlu",7.3],["Yüksek",7.4],["Yılmaz",6.3],["Kökçü",6.3],["Güler",6.6],["Aktürkoğlu",5.6]]},
+  m24:{poss:[65,35],xg:[3.99,0.40],big:[6,0],sh:[27,8],sv:[1,4],cor:[8,1],fl:[18,11],pa:[634,337],tk:[19,16],fk:[10,18],
+    teamR:[7.56,6.17],
+    sc:[{t:"GER",p:"Havertz",m:"45'+5 (pen)"},{t:"GER",p:"Brown",m:"68'"},{t:"GER",p:"Undav",m:"78'"},{t:"GER",p:"Havertz",m:"88'"},{t:"GER",p:"+3 others",m:""},{t:"CUW",p:"Comencencia",m:"21'"}],
+    rH:[["Neuer",5.5],["Kimmich",4.3],["Tah",5.5],["Schlotterbeck",8.3],["Brown",8.0],["Pavlovic",7.7],["Nmecha",5.5],["Wirtz",7.6],["Musiala",8.1],["Sané",5.6],["Havertz",9.3]],
+    rA:[["Room",4.7],["Floranus",5.2],["Bazoer",5.5],["Obispo",5.7],["Comencencia",7.3],["Locadia",5.6],["J. Bacuna",5.7]]},
+  m25:{poss:[48,52],xg:[1.68,1.03],big:[2,1],sh:[15,12],sv:[1,3],cor:[3,5],fl:[10,13],pa:[470,494],tk:[15,21],fk:[13,10],yc:[3,1],
+    teamR:[7.07,6.60],
+    sc:[{t:"CIV",p:"A. Diallo",m:"90'"}],
+    rH:[["Y. Fofana",6.7],["Doué",7.2],["Singo",7.7],["Agbadou",7.6],["Konan",7.2],["Diomande",8.2],["Kessié",7.2],["S. Fofana",6.6],["Touré",6.3],["Pépé",6.7],["Wahi",6.4]],
+    rA:[["Galíndez",7.0],["Hincapié",6.5],["Pacho",6.5],["Ordóñez",6.8],["Franco",7.1],["Minda",6.2],["Vite",7.4],["Caicedo",7.1],["Yeboah",6.5],["Valencia",6.6],["Plata",6.6]]},
+  m30:{poss:[60,40],xg:[0.79,0.54],big:[1,0],sh:[10,10],sv:[1,4],cor:[5,4],fl:[7,7],pa:[525,342],tk:[11,11],fk:[7,7],yc:[3,0],
+    teamR:[6.91,6.74],
+    sc:[{t:"NED",p:"van Dijk",m:"51'"},{t:"NED",p:"Summerville",m:"64'"},{t:"JPN",p:"Nakamura",m:"57'"},{t:"JPN",p:"Kamada",m:"88'"}],
+    rH:[["Verbruggen",6.0],["Dumfries",6.9],["van Hecke",7.4],["van Dijk",7.9],["van de Ven",6.3],["Gravenberch",7.3],["de Jong",7.2],["Reijnders",6.5],["Summerville",8.2],["Malen",6.9],["Gakpo",7.5]],
+    rA:[["Suzuki",8.0],["H. Itō",6.3],["Taniguchi",6.6],["Watanabe",6.5],["Nakamura",7.6],["Kamada",7.2],["Sano",6.2],["Doan",6.4],["Maeda",6.3],["Kubo",6.7],["Ueda",6.6]]},
+  m31:{poss:[49,51],xg:[1.33,0.28],big:[4,0],sh:[13,6],sv:[1,1],cor:[4,2],fl:[10,8],pa:[356,371],tk:[14,21],fk:[8,10],yc:[0,1],
+    teamR:[7.18,6.23],
+    sc:[{t:"SWE",p:"Ayari",m:"7'"},{t:"SWE",p:"Isak",m:"30'"},{t:"SWE",p:"Gyökeres",m:"59'"},{t:"SWE",p:"Svanberg",m:"84'"},{t:"SWE",p:"Ayari",m:"90'+6"},{t:"TUN",p:"Rekik",m:"43'"}],
+    rH:[["Hien",5.7],["Ayari",8.7],["Gyökeres",8.2],["Isak",8.8]],
+    rA:[["Chamakh",4.3],["Abdi",5.2],["Ben Hmida",5.3],["Talbi",7.0],["Rekik",7.2],["Valéry",5.4],["Mejbri",7.2],["Skhiri",5.1],["Khedira",5.9],["Slimane",6.2],["Saad",5.6]]},
+};
 const MATCHSTATS = {
   m25:{ home:"CIV", away:"ECU", rows:[
     {tm:"CIV",pl:"Diallo",mk:"2+ shots",w:4,n:4},
@@ -2883,16 +2949,63 @@ function muRefPanel(mid){
     ${ang.length?`<div class="ref-angles" style="margin-top:10px">${ang.map(a=>`<span>${a}</span>`).join("")}</div>`:""}
   </div>`;
 }
+function muInfoPanel(mid){
+  const mi=(typeof MATCHINFO!=="undefined")?MATCHINFO[mid]:null; if(!mi) return "";
+  const f=FIX.find(x=>x.id===mid); if(!f) return "";
+  const fx=getFix(mid); const hs=num(fx.hs), as=num(fx.as);
+  const TA=TEAM[f.home], TB=TEAM[f.away];
+  const scH=(mi.sc||[]).filter(s=>s.t===f.home).map(s=>`${esc(s.p)} ${esc(s.m||"")}`).join("<br>");
+  const scA=(mi.sc||[]).filter(s=>s.t===f.away).map(s=>`${esc(s.p)} ${esc(s.m||"")}`).join("<br>");
+  const scoreBig=(hs!=null&&as!=null)?`<div class="mi-score"><b>${hs}</b><span>–</span><b>${as}</b></div>`:`<div class="mi-score" style="font-size:18px;color:var(--muted)">vs</div>`;
+  const statDefs=[["Possession","poss","%"],["Expected goals (xG)","xg",""],["Big chances","big",""],["Total shots","sh",""],["GK saves","sv",""],["Corners","cor",""],["Fouls","fl",""],["Passes","pa",""],["Tackles","tk",""],["Free kicks","fk",""],["Yellow cards","yc",""]];
+  const bars=statDefs.map(d=>{
+    const v=mi[d[1]]; if(!v) return ""; const a=v[0],b=v[1]; if(a==null&&b==null) return "";
+    const av=a==null?0:+a, bv=b==null?0:+b; const tot=(av+bv)||1; const aw=Math.round(av/tot*100);
+    const fmt=x=>x==null?"—":(d[2]==="%"?x+"%":(Number.isInteger(+x)?String(x):(+x).toFixed(2)));
+    return `<div class="mi-bar"><div class="mi-v ${av>bv?'lead':''}">${fmt(a)}</div><div class="mi-mid"><div class="mi-lab">${d[0]}</div><div class="mi-track"><div class="mi-a" style="width:${aw}%"></div><div class="mi-b" style="width:${100-aw}%"></div></div></div><div class="mi-v ${bv>av?'lead':''}">${fmt(b)}</div></div>`;
+  }).join("");
+  const rcol=v=> v>=7.5?"#4fd97a": v>=7.0?"#b6e84f": v>=6.5?"#ffd23f":"#ff8c42";
+  const ratCol=arr=>{ if(!arr||!arr.length) return '<div class="props-note" style="margin:0">No ratings.</div>';
+    return arr.slice().sort((a,b)=>b[1]-a[1]).map(r=>`<div class="mi-rrow"><span class="mi-rn">${esc(r[0])}</span><span class="mi-rr" style="background:${rcol(r[1])}">${(+r[1]).toFixed(1)}</span></div>`).join(""); };
+  const teamR=mi.teamR?`<div class="mi-teamr"><span>Team avg ${(+mi.teamR[0]).toFixed(2)}</span><span>Team avg ${(+mi.teamR[1]).toFixed(2)}</span></div>`:"";
+  return `<div class="panel mi-panel" style="margin-top:16px">
+    <div class="kicker" style="margin-bottom:10px">Match result &amp; details</div>
+    <div class="mi-head">
+      <div class="mi-t">${flag(f.home)}<span>${esc(TA.name)}</span></div>
+      ${scoreBig}
+      <div class="mi-t away">${flag(f.away)}<span>${esc(TB.name)}</span></div>
+    </div>
+    <div class="mi-scorers"><div class="mi-sc">${scH||"—"}</div><div class="mi-ball">⚽</div><div class="mi-sc away">${scA||"—"}</div></div>
+    ${bars?`<div class="mi-sub">Match statistics</div>${bars}`:""}
+    <div class="mi-sub">Player ratings</div>${teamR}
+    <div class="mi-rgrid"><div class="mi-rcol">${ratCol(mi.rH)}</div><div class="mi-rcol">${ratCol(mi.rA)}</div></div>
+  </div>`;
+}
 function muStatsPanel(mid){
   const ms=MATCHSTATS[mid]; if(!ms) return "";
   const col=p=> p>=0.90?"#4fd97a": p>=0.75?"#b6e84f": p>=0.60?"#ffd23f":"#ff8c42";
+  const cat=mk=>{const m=mk.toLowerCase();
+    if(m.includes("shot on target")) return "Shots on target";
+    if(m.includes("shot")) return "Shots";
+    if(m.includes("tackle")) return "Tackles";
+    if(m.includes("foul won")||m.includes("fouls won")) return "Fouls won";
+    if(m.includes("foul committed")||m.includes("fouls committed")) return "Fouls committed";
+    if(m.includes("card")) return "Cards";
+    return "Other";};
+  const order=["Shots on target","Shots","Tackles","Fouls won","Fouls committed","Cards","Other"];
   const colFor=tm=>{
-    const rows=ms.rows.filter(r=>r.tm===tm).slice().sort((a,b)=>(b.w/b.n)-(a.w/a.n));
-    const items=rows.map(r=>{const p=r.w/r.n;const c=col(p);return `<div class="ms-row"><div class="ms-mk"><b>${esc(r.pl)}</b> ${esc(r.mk)}</div><div class="ms-hit"><span class="ms-rate" style="color:${c}">${(p*100).toFixed(0)}%</span><span class="ms-wn">${r.w}/${r.n}</span></div></div>`;}).join("");
-    return `<div class="ms-col"><div class="ms-team">${flag(tm)}<span>${esc(TEAM[tm].name)}</span></div>${items}</div>`;
+    const rows=ms.rows.filter(r=>r.tm===tm);
+    const groups={}; rows.forEach(r=>{(groups[cat(r.mk)]=groups[cat(r.mk)]||[]).push(r);});
+    let html="";
+    order.forEach(g=>{ if(!groups[g]) return;
+      const items=groups[g].slice().sort((a,b)=>(b.w/b.n)-(a.w/a.n)).map(r=>{const p=r.w/r.n;const c=col(p);const pc=(p*100).toFixed(0);
+        return `<div class="ms-row"><div class="ms-mk"><b>${esc(r.pl)}</b> <span class="ms-mkt">${esc(r.mk)}</span></div><div class="ms-barwrap"><div class="ms-bartrack"><div class="ms-barfill" style="width:${pc}%;background:${c}"></div></div><span class="ms-rate" style="color:${c}">${pc}%</span><span class="ms-wn">${r.w}/${r.n}</span></div></div>`;}).join("");
+      html+=`<div class="ms-cat">${g}</div>${items}`;
+    });
+    return `<div class="ms-col"><div class="ms-team">${flag(tm)}<span>${esc(TEAM[tm].name)}</span></div>${html}</div>`;
   };
   return `<div class="panel" style="margin-top:16px"><div class="kicker" style="margin-bottom:6px">Key player stats — bet builder</div>
-    <div class="props-note" style="margin:0 0 12px">Hit-rate πρόσφατων ματς ανά παίκτη/market — υλικό για bet builders. <span style="color:var(--lime)">≥90%</span> = πολύ σταθερό. Combine με τον ref (high-card → over fouls/cards).</div>
+    <div class="props-note" style="margin:0 0 12px">Hit-rate πρόσφατων ματς ανά κατηγορία/παίκτη. <span style="color:var(--lime)">≥90%</span> = πολύ σταθερό. Combine με τον ref (high-card → over fouls/cards).</div>
     <div class="ms-grid">${colFor(ms.home)}${colFor(ms.away)}</div>
   </div>`;
 }
@@ -3019,6 +3132,37 @@ function viewMatchup(){
   .cba-edge{color:var(--lime)}
   .cba-edge b{color:#eef2f7}
   @media(max-width:640px){.cba-row{flex-direction:column;gap:6px}.cba-vul{min-width:0}}
+  /* match info panel */
+  .mi-head{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:10px}
+  .mi-t{display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:700;font-size:13px;flex:1;text-align:center}
+  .mi-t.away{}
+  .mi-score{display:flex;align-items:center;gap:8px;font-size:30px;font-weight:800}
+  .mi-score span{color:var(--muted);font-size:20px}
+  .mi-scorers{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;font-size:12px;color:var(--muted)}
+  .mi-sc{flex:1;text-align:right;line-height:1.5}
+  .mi-sc.away{text-align:left}
+  .mi-ball{font-size:14px}
+  .mi-sub{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:16px 0 8px;font-weight:700}
+  .mi-bar{display:flex;align-items:center;gap:10px;margin:7px 0}
+  .mi-v{min-width:42px;text-align:center;font-weight:700;font-size:13px;color:var(--muted)}
+  .mi-v.lead{color:#eef2f7}
+  .mi-mid{flex:1}
+  .mi-lab{text-align:center;font-size:11px;color:var(--muted);margin-bottom:3px}
+  .mi-track{display:flex;height:6px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.06)}
+  .mi-a{background:#4fd97a}
+  .mi-b{background:#5b8def}
+  .mi-teamr{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:700}
+  .mi-rgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+  .mi-rcol{display:flex;flex-direction:column;gap:4px}
+  .mi-rrow{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}
+  .mi-rn{color:#cfd6e2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mi-rr{min-width:30px;text-align:center;border-radius:4px;font-weight:800;color:#0b0e12;font-size:11px;padding:1px 0}
+  /* categorized props bars */
+  .ms-cat{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--lime);margin:10px 0 5px;font-weight:700;opacity:.85}
+  .ms-mkt{color:var(--muted);font-size:11px}
+  .ms-barwrap{display:flex;align-items:center;gap:6px;margin-top:3px}
+  .ms-bartrack{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}
+  .ms-barfill{height:100%;border-radius:3px}
   </style>`;
   return `${muCss}<div class="view">
     <button class="mu-back" data-back>← Back to schedule</button>
@@ -3028,6 +3172,7 @@ function viewMatchup(){
       <div class="mu-team away mu-team-link" data-team="${f.away}">${flag(f.away)}<span>${esc(TB.name)}</span></div>
     </div>
     <div class="venue" style="text-align:center;margin:-4px 0 18px">${esc(f.venue)}</div>
+    ${muInfoPanel(currentMatch)}
     <div class="panel"><div class="kicker" style="margin-bottom:12px">AI match probabilities</div>${probBar}${markets}<div class="props-note" style="margin:14px 0 0">Independent-Poisson model on the FDR opponent-adjusted expected goals. Pre-match estimate — directional, not a guarantee.</div></div>
     ${muCbAngle(currentMatch)}
     <div class="panel" style="margin-top:16px"><div class="kicker" style="margin-bottom:12px">Head-to-head stat comparison</div>${statRows}</div>
@@ -3060,7 +3205,7 @@ function viewTeamDetail(id){
   else if(teamSub==="xi") body=xiView(id);
   else if(teamSub==="stats") body=statsView(id);
   else body=scoutView(id);
-  const fixes=FIX.filter(f=>f.home===id||f.away===id).map(f=>{const opp=f.home===id?f.away:f.home;const ha=f.home===id?'H':'A';const fx=state.fixtures[f.id];const sc=(fx&&num(fx.hs)!==null&&num(fx.as)!==null)?`${fx.hs}–${fx.as}`:`<span style="color:var(--lime)">${gr(f.date,f.time)}</span>`;return `<div class="upcoming-row"><span class="when">${grDate(f.date,f.time)}</span><span class="gtag">${ha}</span>${teamChip(opp,true)}<span style="margin-left:auto" class="mono">${sc}</span></div>`;}).join("");
+  const fixes=FIX.filter(f=>f.home===id||f.away===id).map(f=>{const opp=f.home===id?f.away:f.home;const ha=f.home===id?'H':'A';const fx=state.fixtures[f.id];const sc=(fx&&num(fx.hs)!==null&&num(fx.as)!==null)?`${fx.hs}–${fx.as}`:`<span style="color:var(--lime)">${gr(f.date,f.time)}</span>`;return `<div class="upcoming-row" data-matchup="${f.id}" style="cursor:pointer"><span class="when">${grDate(f.date,f.time)}</span><span class="gtag">${ha}</span>${teamChip(opp,true)}<span style="margin-left:auto" class="mono">${sc}</span></div>`;}).join("");
   return `<div class="view">
     <button class="btn sm" data-back style="margin-bottom:16px">← All teams</button>
     <div class="team-detail-head">${flag(id,"xl")}<h2>${esc(t.name)}</h2><span class="gpill">Group ${t.group}</span></div>
