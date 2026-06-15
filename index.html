@@ -701,9 +701,9 @@ const SEED_RTG_BETS=[
   {key:"rtg-austur-bb-207-20260614", match:"Australia v Turkey", sel:"Bet Builder \u00b7 Turkey corners O4.5 \u00b7 X2 (draw or Turkey) \u00b7 Turkey -0.5 corner handicap", odds:"2.07", stake:"100", status:"lost", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
-  {key:"brk-swetun-cards2-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (2 legs) \u00b7 Valery + Khedira to be carded", odds:"17.00", stake:"5", status:"pending", book:"bet365", legs:["Y. Valery — to be carded","R. Khedira — to be carded"]},
-  {key:"brk-swetun-cards3-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (3 legs) \u00b7 Ayari + Karlstrom + Khedira to be carded", odds:"86.00", stake:"5", status:"pending", book:"bet365", legs:["Y. Ayari — to be carded","J. Karlstrom — to be carded","R. Khedira — to be carded"]},
-  {key:"brk-swetun-bb-600-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (9 legs) \u00b7 tackles/shots multi + both teams carded + 1X", odds:"6.00", stake:"15", status:"pending", book:"bet365", legs:["Y. Valery — 1+ tackle","E. Skhiri — 1+ tackle","I. Hien — 1+ tackle","G. Gudmundsson — 1+ tackle","G. Gudmundsson — 1+ foul won","V. Gyokeres — 1+ shot on target","A. Abdi — 1+ shot","Both teams to be carded","Sweden or Draw (Double Chance)"]},
+  {key:"brk-swetun-cards2-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (2 legs) \u00b7 Valery + Khedira to be carded", odds:"17.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Valery — to be carded","R. Khedira — to be carded"]},
+  {key:"brk-swetun-cards3-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (3 legs) \u00b7 Ayari + Karlstrom + Khedira to be carded", odds:"86.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Ayari — to be carded","J. Karlstrom — to be carded","R. Khedira — to be carded"]},
+  {key:"brk-swetun-bb-600-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (9 legs) \u00b7 tackles/shots multi + both teams carded + 1X", odds:"6.00", stake:"15", status:"lost", book:"bet365", legs:["Y. Valery — 1+ tackle","E. Skhiri — 1+ tackle","I. Hien — 1+ tackle","G. Gudmundsson — 1+ tackle","G. Gudmundsson — 1+ foul won","V. Gyokeres — 1+ shot on target","A. Abdi — 1+ shot","Both teams to be carded","Sweden or Draw (Double Chance)"]},
   {key:"brk-civecu-bb-2100-20260615", match:"Ivory Coast v Ecuador", sel:"Bet Builder (5 legs) \u00b7 Kessie + Caicedo carded + 3 shot legs", odds:"21.00", stake:"10", status:"lost", book:"bet365", legs:["F. Kessie — to be carded","M. Caicedo — to be carded","E. Valencia — 1+ shot on target","G. Plata — 2+ shots","Diomande — 1+ shot"]},
   {key:"brk-nedjpn-bb-1300-20260614", match:"Netherlands v Japan", sel:"Bet Builder (5 legs) \u00b7 Japan win + O2.5 + BTTS + 1H O0.5 + corners O9.5", odds:"13.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Japan — final result (win)","Over 2.5 goals","Both teams to score — Yes","1st half — Over 0.5 goals","Over 9.5 corners"]},
   {key:"brk-gercuw-zbac3-20260614", match:"Germany v Curacao", sel:"Z. Bacuna 3+ fouls committed", odds:"5.50", stake:"20", status:"lost", book:"Stoiximan", legs:["Z. Bacuna — 3+ fouls committed"]},
@@ -773,6 +773,8 @@ const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08
 ]}];
 
 const SEED_UPDATES=[
+{"id":"SWE","key":"swe-report-swetun-20260615","scoutPrepend":"📋 WC GROUP F (Sun 14/06, MD1 v Tunisia): SWEDEN 5-1 TUNISIA.\nRampant — xG 1.33 v 0.28, four big chances. Ayari brace (7', 90+6), Isak 30', Gyökeres 59', Svanberg 84'. Rekik's 43' a mere consolation.\nTop: Isak 8.8 (G), Ayari 8.7 (2G), Gyökeres 8.2 (G). Team 7.18. 3 points.\n➡ NEXT: Sat 20/06 v Netherlands (Houston); then Thu 25/06 v Japan (Arlington).\n\n"},
+{"id":"TUN","key":"tun-report-swetun-20260615","scoutPrepend":"📋 WC GROUP F (Sun 14/06, MD1 v Sweden): TUNISIA 1-5 SWEDEN.\nThrashed — Rekik's 43' aside, no answers (xG 0.28, 0 big chances). GK Chamakh torrid (4.3), defence overrun.\nTop: Mejbri 7.2, Rekik 7.2 (G), Talbi 7.0. Team 6.23. 0 points.\n➡ NEXT: Sat 20/06 v Japan (Monterrey); then Thu 25/06 v Netherlands (Kansas City).\n\n"},
 {"id":"CIV","key":"civ-report-civecu-20260615","scoutPrepend":"📋 WC GROUP E (Sun 14/06, MD1 v Ecuador): IVORY COAST 1-0 ECUADOR.\nLate smash-and-grab — Amad Diallo 90' off the bench settled a tight one. Edged xG 1.68 v 1.03, 15 shots. Diomande superb.\nTop: Diomande 8.2, Singo 7.7, Agbadou 7.6, Doué/Konan/Kessié 7.2. Team 7.07. 3 points.\n➡ NEXT: Sat 20/06 v Germany (Toronto); then Thu 25/06 v Curaçao (Philadelphia).\n\n"},
 {"id":"ECU","key":"ecu-report-civecu-20260615","scoutPrepend":"📋 WC GROUP E (Sun 14/06, MD1 v Ivory Coast): ECUADOR 0-1 IVORY COAST.\nSucker-punched at the death — Diallo 90'. Competitive (52% ball) but blunt up top; Valencia & Plata quiet (6.6).\nTop: Vite 7.4, Caicedo 7.1, Franco 7.1, Galíndez 7.0. Team 6.60. 0 points.\n➡ NEXT: Sat 20/06 v Curaçao (Kansas City); then Thu 25/06 v Germany (East Rutherford).\n\n"},
 {"id":"NED","key":"ned-report-nedjpn-20260614","scoutPrepend":"📋 WC GROUP F (Sun 14/06, MD1 v Japan): NETHERLANDS 2-2 JAPAN.\nTwo-goal lead thrown away — van Dijk 51', Summerville 64' (8.2), but Nakamura 57' & Kamada 88' rescued a point for Japan. Wasteful after going 2-0 up.\nTop: Summerville 8.2 (G), van Dijk 7.9 (G), Gakpo 7.5, van Hecke 7.4. Team 6.91. 1 point.\n➡ NEXT: Sat 20/06 v Sweden (Houston); then Thu 25/06 v Tunisia (Kansas City).\n\n"},
@@ -1896,6 +1898,27 @@ async function loadAll(){
     if(!done){
       const cur=state.fixtures.m12||{hs:"",as:"",pred:"",note:""};
       if(cur.hs!=="1"||cur.as!=="1"){ cur.hs="1"; cur.as="1"; state.fixtures.m12=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Sweden 5-1 Tunisia (m31) Group F standings — 15/06
+  {
+    const fk="wc2026:upd:results-swetun-20260615"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m31||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="5"||cur.as!=="1"){ cur.hs="5"; cur.as="1"; state.fixtures.m31=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Sweden v Tunisia all bricks LOST — 15/06
+  {
+    const fk="wc2026:upd:settle-swetun-brk-20260615"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      let cb=false;
+      (state.bricks.bets||[]).forEach(b=>{ if(b.match==="Sweden v Tunisia" && b.status==="pending"){ b.status="lost"; cb=true; } });
+      if(cb) doSave("bricks");
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
