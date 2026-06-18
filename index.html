@@ -762,10 +762,9 @@ const SEED_RTG_BETS=[
   {key:"rtg-porcod-bb-227-20260617", match:"Portugal v DR Congo", sel:"Bet Builder \u00b7 Portugal to win \u00b7 Portugal over 5.5 corners \u00b7 Over 1.5 goals", odds:"2.27", stake:"100", status:"lost", book:"Stoiximan"},
   {key:"rtg-engcro-htft-260-20260617", match:"England v Croatia", sel:"HT/FT \u00b7 England/Croatia", odds:"2.60", stake:"100", status:"lost", book:"Stoiximan"},
   {key:"rtg-combo-eng-col-gha-20260617", match:"Combo", sel:"England FT + Colombia FT + Ghana FT \u00b7 Eng-Cro 4-2 / Uzb-Col 1-3 / Gha-Pan 1-0", odds:"6.15", stake:"80", status:"won", book:"Stoiximan"},
-  {key:"rtg-czersa-bb-245-20260618", match:"Czechia v South Africa", sel:"Bet Builder \u00b7 Czechia +0.5 corner handicap (double chance) \u00b7 Czechia +2 final result", odds:"2.45", stake:"100", status:"pending", book:"Stoiximan"},
+  {key:"rtg-czersa-bb-245-20260618", match:"Czechia v South Africa", sel:"Bet Builder \u00b7 Czechia +0.5 corner handicap (double chance) \u00b7 Czechia to win (final result)", odds:"2.45", stake:"100", status:"lost", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
-  {key:"brk-czersa-bb-850-20260618", match:"Czechia v South Africa", sel:"Bet Builder (8 legs) \u00b7 Schick/Sulc shots + tackles + fouls won", odds:"8.50", stake:"9", status:"pending", book:"Stoiximan", legs:["Schick (Czechia) — 1+ shot on target","Sulc (Czechia) — 2+ shots","Soucek (Czechia) — 1+ tackle","Coufal (Czechia) — 1+ tackle","Mudau (South Africa) — 2+ tackles","Mokoena (South Africa) — 1+ tackle","Mudau (South Africa) — 1+ foul won","Schick (Czechia) — 1+ foul won"]},
   {key:"brk-swetun-cards2-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (2 legs) \u00b7 Valery + Khedira to be carded", odds:"17.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Valery — to be carded","R. Khedira — to be carded"]},
   {key:"brk-swetun-cards3-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (3 legs) \u00b7 Ayari + Karlstrom + Khedira to be carded", odds:"86.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Ayari — to be carded","J. Karlstrom — to be carded","R. Khedira — to be carded"]},
   {key:"brk-swetun-bb-600-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (9 legs) \u00b7 tackles/shots multi + both teams carded + 1X", odds:"6.00", stake:"15", status:"lost", book:"bet365", legs:["Y. Valery — 1+ tackle","E. Skhiri — 1+ tackle","I. Hien — 1+ tackle","G. Gudmundsson — 1+ tackle","G. Gudmundsson — 1+ foul won","V. Gyokeres — 1+ shot on target","A. Abdi — 1+ shot","Both teams to be carded","Sweden or Draw (Double Chance)"]},
@@ -795,6 +794,10 @@ const SEED_BRICKS_BETS=[
   {key:"brk-porcod-bb-1700-20260617", match:"Portugal v DR Congo", sel:"Bet Builder (8 legs) \u00b7 Over 2.5 goals + corners/cards + Bakambu/Fernandes/Masuaku props", odds:"17.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Over 2.5 goals","Over 8.5 total corners","DR Congo over 2.5 corners","Over 2.5 total cards","DR Congo over 6.5 shots","Bakambu (DR Congo) — 2+ shots","Bruno Fernandes (Portugal) — 1+ foul won","Masuaku (DR Congo) — 1+ foul committed"]},
   {key:"brk-uzbcol-bb-1125-20260617", match:"Uzbekistan v Colombia", sel:"Bet Builder (7 legs) \u00b7 Colombia -1 + James/Díaz assist + shot/foul props", odds:"11.25", stake:"24.63", status:"lost", book:"Stoiximan", legs:["Colombia -1 (handicap final result)","James Rodríguez or Luis Díaz — 1+ assist","Igor Sergeev — 2+ shots (Golden Sub, was Shomurodov)","Abbosbek Fayzullaev — 1+ shots","Cucho Hernández — 3+ shots (Golden Sub, was L. Suárez)","Gustavo Puerta — 1+ fouls committed","J. Cabal — 4+ fouls won (Golden Sub)"]},
   {key:"brk-ghapan-bb-2700-20260617", match:"Ghana v Panama", sel:"Bet Builder (7 legs) \u00b7 BTA shots + props + Semenyo to score + Over 2.5", odds:"27.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Brandon Thomas-Asante — 1+ shots on target (Golden Sub, was K. Sulemana)","T. Ayew — 2+ fouls won","K. Harvey — 1+ shots","J. Fajardo — 2+ shots (Golden Sub, was S. Waterman)","Michael Murillo — 1+ fouls won","Antoine Semenyo (Ghana) — to score","Over 2.5 goals"]},
+  {key:"brk-czersa-bb-850-20260618", match:"Czechia v South Africa", sel:"Bet Builder (8 legs, 2 void) \u00b7 Schick/Sulc shots + tackles + fouls won \u00b7 settled @5.40", odds:"5.40", stake:"9", status:"won", book:"Stoiximan", legs:["Schick (Czechia) — 1+ shot on target","Sulc (Czechia) — 2+ shots (VOID — Golden Sub)","Soucek (Czechia) — 1+ tackle (VOID — Golden Sub)","Coufal (Czechia) — 1+ tackle","Mudau (South Africa) — 2+ tackles","Mokoena (South Africa) — 1+ tackle","Mudau (South Africa) — 1+ foul won","Schick (Czechia) — 1+ foul won"]},
+  {key:"brk-suibih-elvedi-1000-20260618", match:"Switzerland v Bosnia & Herz.", sel:"Nico Elvedi (Switzerland) to be booked", odds:"10.00", stake:"10", status:"won", book:"Stoiximan", legs:["Nico Elvedi (Switzerland) — to be booked"]},
+  {key:"brk-suibih-bb-4000-20260618", match:"Switzerland v Bosnia & Herz.", sel:"Bet Builder (6 legs) \u00b7 GG + corners/cards + Ndoye/Katic props", odds:"40.00", stake:"5", status:"lost", book:"Stoiximan", legs:["Both teams to score (GG)","Over 9.5 corners","Over 4.5 total cards","Dan Ndoye (Switzerland) — 1+ shot on target","N. Katic (Bosnia) — 2+ tackles","Basic/Tahirovic (Bosnia) — 2+ tackles (Golden Sub)"]},
+  {key:"brk-suibih-cards3-15000-20260618", match:"Switzerland v Bosnia & Herz.", sel:"Bet Builder (3 legs, +25% boost) \u00b7 Elvedi + Katic + Kolasinac to be booked", odds:"150.00", stake:"5", status:"lost", book:"Stoiximan", legs:["Nico Elvedi (Switzerland) — to be booked","N. Katic (Bosnia) — to be booked","S. Kolasinac (Bosnia) — to be booked"]},
 ];
 const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08/06 (group bets)","stake":"1","status":"pending","legs":[
 {"match":"Mexico v South Africa (Grp A)","sel":"Winner & 4th: Mexico 1st, S. Africa 4th","odds":"3.15"},
@@ -966,7 +969,11 @@ const SEED_UPDATES=[
 {"id":"KOR","key":"kor-xi-actual-20260611","xi":{"formation":"3-4-2-1","names":["Kim Seung-gyu","Lee Kihyuk","Kim Minjae","Lee Hanbeom","Lee Taeseok","Hwang Inbeom","Lee Kangin","Seol Youngwoo","Lee Jaesung","Paik Seungho","Son Heungmin"]}},
 {"id":"CZE","key":"cze-xi-actual-20260611","xi":{"formation":"3-4-2-1","names":["Kovar","Chaloupek","Hranac","Krejci","Coufal","Soucek","Sojka","Zeleny","Provod","Sulc","Schick"]}},
 {"id":"MEX","key":"mex-xi-actual-20260611","xi":{"formation":"4-1-4-1","names":["Rangel","Gallardo","Montes","Gutierrez","Reyes","Lira","Quinones","Vasquez","Fidalgo","Alvarado","Jimenez"]}},
-{"id":"RSA","key":"rsa-xi-actual-20260611","xi":{"formation":"5-3-2","names":["Williams","Mudau","Sibisi","Okon","Mbokazi","Modiba","Mokoena","Sithole","Adams","Rayners","Foster"]}}
+{"id":"RSA","key":"rsa-xi-actual-20260611","xi":{"formation":"5-3-2","names":["Williams","Mudau","Sibisi","Okon","Mbokazi","Modiba","Mokoena","Sithole","Adams","Rayners","Foster"]}},
+{"id":"CZE","key":"cze-xi-actual-20260618","xi":{"formation":"3-5-2","names":["Kovar","Holes","Hranac","Krejci","Coufal","Darida","Cerv","Sadilek","Sojka","Schick","Hlozek"]}},
+{"id":"RSA","key":"rsa-xi-actual-20260618","xi":{"formation":"4-3-3","names":["Williams","Mudau","Okon","Mbokazi","Modiba","Adams","Mokoena","Mbatha","Maseko","Rayners","Appollis"]}},
+{"id":"SUI","key":"sui-xi-actual-20260618","xi":{"formation":"4-4-2","names":["Kobel","Widmer","Elvedi","Akanji","Rodriguez","Freuler","Xhaka","Rieder","Aebischer","Embolo","Ndoye"]}},
+{"id":"BIH","key":"bih-xi-actual-20260618","xi":{"formation":"4-4-2","names":["Vasilj","Dedic","Katic","Muharemovic","Kolasinac","Memic","Tahirovic","Sunjic","Alajbegovic","Dzeko","Demirovic"]}}
 ];
 
 const SRC_DATES={}; (typeof SEED_UPDATES!=="undefined"?SEED_UPDATES:[]).forEach(u=>{const m=(u.key||"").match(/(\d{4})(\d{2})(\d{2})$/); if(m) SRC_DATES[u.id]=m[1]+"-"+m[2]+"-"+m[3];});
@@ -1558,9 +1565,11 @@ function viewRefs(){
    Excludes friendlies/qualifiers — this is live-tournament form only. */
 const TOURSTATS = {
   "KOR":[{mid:"m1",opp:"CZE",h:true,gf:2,ga:1,poss:62,xgF:2.30,xgA:0.83,bigCh:4,bigChA:1,shots:15,shotsA:7,corners:4,cornersA:5,fouls:9,foulsA:16,cards:1,cardsA:0,dist:104.2,distA:108.3,ratings:{"Kim Seung-gyu":7.3,"Lee Kihyuk":6.9,"Kim Minjae":6.9,"Lee Hanbeom":6.8,"Lee Taeseok":7.2,"Hwang Inbeom":8.6,"Lee Kangin":8.2,"Seol Youngwoo":6.6,"Lee Jaesung":8.5,"Paik Seungho":7.1,"Son Heungmin":8.8}}],
-  "CZE":[{mid:"m1",opp:"KOR",h:false,gf:1,ga:2,poss:38,xgF:0.83,xgA:2.30,bigCh:1,bigChA:4,shots:7,shotsA:15,corners:5,cornersA:4,fouls:16,foulsA:9,cards:0,cardsA:1,dist:108.3,distA:104.2,ratings:{"Kovar":7.0,"Chaloupek":5.9,"Hranac":8.3,"Krejci":7.1,"Coufal":6.4,"Soucek":6.6,"Sojka":5.7,"Zeleny":6.6,"Provod":6.5,"Sulc":6.7,"Schick":8.4}}],
+  "CZE":[{mid:"m1",opp:"KOR",h:false,gf:1,ga:2,poss:38,xgF:0.83,xgA:2.30,bigCh:1,bigChA:4,shots:7,shotsA:15,corners:5,cornersA:4,fouls:16,foulsA:9,cards:0,cardsA:1,dist:108.3,distA:104.2,ratings:{"Kovar":7.0,"Chaloupek":5.9,"Hranac":8.3,"Krejci":7.1,"Coufal":6.4,"Soucek":6.6,"Sojka":5.7,"Zeleny":6.6,"Provod":6.5,"Sulc":6.7,"Schick":8.4}},{mid:"m2",opp:"RSA",h:true,gf:1,ga:1,poss:38,xgF:1.02,xgA:1.37,bigCh:3,bigChA:1,shots:14,shotsA:17,corners:5,cornersA:5,fouls:12,foulsA:10,cards:1,cardsA:2,ratings:{"Kovar":6.7,"Holes":6.5,"Hranac":6.6,"Krejci":7.5,"Coufal":7.0,"Darida":6.8,"Cerv":7.0,"Sadilek":7.6,"Sojka":7.2,"Schick":6.2,"Hlozek":6.1}}],
   "MEX":[{mid:"m0",opp:"RSA",h:true,gf:2,ga:0,poss:61,xgF:1.46,xgA:0.07,bigCh:2,bigChA:0,shots:16,shotsA:3,corners:3,cornersA:1,fouls:12,foulsA:11,cards:1,cardsA:2,reds:1,redsA:2,dist:91.8,distA:85.9,ratings:{"Rangel":7.3,"Gallardo":6.9,"Montes":8.8,"Gutierrez":8.9,"Reyes":7.2,"Lira":7.4,"Quinones":8.6,"Vasquez":8.9,"Fidalgo":7.1,"Alvarado":8.2,"Jimenez":7.5}}],
-  "RSA":[{mid:"m0",opp:"MEX",h:false,gf:0,ga:2,poss:39,xgF:0.07,xgA:1.46,bigCh:0,bigChA:2,shots:3,shotsA:16,corners:1,cornersA:3,fouls:11,foulsA:12,cards:2,cardsA:1,reds:2,redsA:1,dist:85.9,distA:91.8,ratings:{"Williams":8.3,"Mudau":8.5,"Sibisi":6.0,"Okon":6.3,"Mbokazi":6.4,"Modiba":5.9,"Mokoena":4.5,"Sithole":4.9,"Adams":6.6,"Rayners":6.1,"Foster":5.9}}]
+  "RSA":[{mid:"m0",opp:"MEX",h:false,gf:0,ga:2,poss:39,xgF:0.07,xgA:1.46,bigCh:0,bigChA:2,shots:3,shotsA:16,corners:1,cornersA:3,fouls:11,foulsA:12,cards:2,cardsA:1,reds:2,redsA:1,dist:85.9,distA:91.8,ratings:{"Williams":8.3,"Mudau":8.5,"Sibisi":6.0,"Okon":6.3,"Mbokazi":6.4,"Modiba":5.9,"Mokoena":4.5,"Sithole":4.9,"Adams":6.6,"Rayners":6.1,"Foster":5.9}},{mid:"m2",opp:"CZE",h:false,gf:1,ga:1,poss:62,xgF:1.37,xgA:1.02,bigCh:1,bigChA:3,shots:17,shotsA:14,corners:5,cornersA:5,fouls:10,foulsA:12,cards:2,cardsA:1,ratings:{"Williams":6.2,"Mudau":6.7,"Okon":7.0,"Mbokazi":6.8,"Modiba":7.2,"Adams":6.5,"Mokoena":8.0,"Mbatha":6.7,"Maseko":6.8,"Rayners":6.1,"Appollis":7.0}}],
+  "SUI":[{mid:"m8",opp:"BIH",h:true,gf:4,ga:1,poss:62,xgF:2.01,xgA:0.24,bigCh:3,bigChA:0,shots:13,shotsA:5,corners:7,cornersA:3,fouls:7,foulsA:18,cards:1,cardsA:2,reds:0,redsA:1,ratings:{"Kobel":5.9,"Widmer":6.4,"Elvedi":6.8,"Akanji":7.8,"Rodriguez":6.5,"Freuler":7.4,"Xhaka":8.1,"Rieder":7.1,"Aebischer":6.9,"Embolo":7.4,"Ndoye":6.5}}],
+  "BIH":[{mid:"m8",opp:"SUI",h:false,gf:1,ga:4,poss:38,xgF:0.24,xgA:2.01,bigCh:0,bigChA:3,shots:5,shotsA:13,corners:3,cornersA:7,fouls:18,foulsA:7,cards:2,cardsA:1,reds:1,redsA:0,ratings:{"Vasilj":5.4,"Dedic":5.8,"Katic":6.3,"Muharemovic":6.2,"Kolasinac":5.6,"Memic":5.9,"Tahirovic":6.1,"Sunjic":6.4,"Alajbegovic":6.1,"Dzeko":6.6,"Demirovic":6.3}}]
 };
 const FORMATIONS = {
   "4-3-3":[["GK",50,90],["RB",82,72],["CB",62,76],["CB",38,76],["LB",18,72],["CM",70,52],["CM",50,56],["CM",30,52],["RW",80,24],["ST",50,16],["LW",20,24]],
@@ -2160,6 +2169,39 @@ async function loadAll(){
     if(!done){
       const cur=state.fixtures.m49||{hs:"",as:"",pred:"",note:""};
       if(cur.hs!=="1"||cur.as!=="4"){ cur.hs="1"; cur.as="4"; state.fixtures.m49=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Switzerland 4-1 Bosnia & Herzegovina (m8) Group B — 18/06 (Manzambi 74',90', Vargas 84', Xhaka 90'+7 pen / Mahmić 90'+3)
+  {
+    const fk="wc2026:upd:results-suibih-20260618"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m8||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="4"||cur.as!=="1"){ cur.hs="4"; cur.as="1"; state.fixtures.m8=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Czechia 1-1 South Africa (m2) Group A — 18/06
+  {
+    const fk="wc2026:upd:results-czersa-20260618"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m2||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="1"||cur.as!=="1"){ cur.hs="1"; cur.as="1"; state.fixtures.m2=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: settle Czechia v South Africa (1-1) — RTG lost (no Czechia win), Bricks won @5.40 (2 legs void via Golden Sub)
+  {
+    const fk="wc2026:upd:settle-czersa-20260618"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      let chR=false, chB=false;
+      (state.rtg.bets||[]).forEach(b=>{ if(b.match==="Czechia v South Africa" && b.status==="pending"){ b.status="lost"; chR=true; } });
+      (state.bricks.bets||[]).forEach(b=>{ if(b.match==="Czechia v South Africa" && b.status==="pending"){ b.status="won"; b.odds="5.40"; chB=true; } });
+      if(chR) doSave("rtg");
+      if(chB) doSave("bricks");
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
