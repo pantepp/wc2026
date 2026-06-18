@@ -68,7 +68,8 @@ h2.sec{font-family:'Bebas Neue';font-size:30px;letter-spacing:1.2px;margin:0 0 4
 .kicker{font-family:'DM Mono';font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--lime-dim)}
 
 /* generic panel */
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 18px 34px -22px rgba(0,0,0,.75),0 4px 10px -4px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.045);transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s ease,border-color .25s ease}
+.panel:hover{transform:translateY(-3px);box-shadow:0 28px 48px -22px rgba(0,0,0,.8),0 8px 18px -6px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
 .grid{display:grid;gap:16px}
 
 /* overview */
@@ -268,25 +269,34 @@ table.squad input.num{text-align:center;font-family:'DM Mono'}
 .pitch{
   position:relative;width:100%;aspect-ratio:68/100;border-radius:14px;
   background:
-    linear-gradient(180deg,#0e2a18,#0c2014),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 9%,rgba(0,0,0,.05) 9% 18%);
-  background-blend-mode:overlay;
+    radial-gradient(130% 70% at 50% 102%, rgba(150,225,150,.20), transparent 58%),
+    radial-gradient(100% 60% at 50% -8%, rgba(0,0,0,.32), transparent 55%),
+    linear-gradient(180deg,#0a2012,#0e2a18 48%,#114022),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 8%,rgba(0,0,0,.07) 8% 16%);
+  background-blend-mode:screen,multiply,normal,overlay;
   border:1px solid #1c3a26;overflow:hidden;
+  transform:perspective(1250px) rotateX(11deg);
+  transform-origin:center 60%;
+  box-shadow:0 30px 55px -20px rgba(0,0,0,.72),0 8px 18px rgba(0,0,0,.45),inset 0 0 60px rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.06);
+  margin:6px 0 16px;
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease;
 }
+.pitch:hover{transform:perspective(1250px) rotateX(6deg)}
 .pitch:before,.pitch:after{content:"";position:absolute;left:8%;right:8%;border:1.5px solid rgba(255,255,255,.16)}
 .pitch:before{top:0;height:16%;border-top:none;border-radius:0 0 6px 6px}
 .pitch:after{bottom:0;height:16%;border-bottom:none;border-radius:6px 6px 0 0}
 .pitch .midline{position:absolute;left:0;right:0;top:50%;height:1.5px;background:rgba(255,255,255,.16)}
 .pitch .center{position:absolute;left:50%;top:50%;width:24%;aspect-ratio:1;border:1.5px solid rgba(255,255,255,.16);border-radius:50%;transform:translate(-50%,-50%)}
 .slot{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:3px;width:80px}
-.slot .dot{position:relative;width:30px;height:30px;border-radius:50%;background:var(--lime);color:#0a0e14;display:flex;align-items:center;justify-content:center;font-family:'DM Mono';font-weight:700;font-size:11px;box-shadow:0 3px 10px rgba(0,0,0,.4);border:2px solid rgba(255,255,255,.25)}
+.slot .dot{position:relative;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 32% 26%,#f4ffc4,var(--lime) 56%,#b6d233 100%);color:#0a0e14;display:flex;align-items:center;justify-content:center;font-family:'DM Mono';font-weight:700;font-size:11px;box-shadow:0 7px 13px -3px rgba(0,0,0,.6),0 2px 4px rgba(0,0,0,.45),inset 0 1.5px 1px rgba(255,255,255,.6),inset 0 -2px 3px rgba(0,0,0,.28);border:1.5px solid rgba(255,255,255,.42)}
+.slot .dot::after{content:"";position:absolute;left:50%;top:112%;width:27px;height:9px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 72%);border-radius:50%;filter:blur(1.5px);z-index:-1}
 .duties{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;display:flex;gap:1px;font-size:11px;line-height:1;background:rgba(8,12,18,.92);border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:2px 4px;white-space:nowrap}
 .rest-name .duties-inline{font-size:11px;margin-left:5px;letter-spacing:1px}
 .xi-source-tabs{display:inline-flex;gap:3px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:3px;margin-bottom:12px;flex-wrap:wrap}
 .xi-source-tabs button{background:transparent;border:none;color:var(--muted);font-family:'DM Mono';font-size:10.5px;letter-spacing:.3px;padding:5px 10px;border-radius:6px;cursor:pointer}
 .xi-source-tabs button:hover{color:var(--txt)}
 .xi-source-tabs button.active{background:var(--lime);color:#0a0e14;font-weight:600}
-.slot .nm{width:88px;text-align:center;font-size:10.5px;padding:3px 4px;background:rgba(8,12,18,.82);border:1px solid rgba(255,255,255,.12);border-radius:5px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot .nm{width:88px;text-align:center;font-size:10.5px;padding:3px 4px;background:rgba(8,12,18,.82);border:1px solid rgba(255,255,255,.12);border-radius:5px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 4px 9px -2px rgba(0,0,0,.5)}
 .slot .nm.green{color:#5ff0a0;border-color:rgba(56,224,138,.55);background:rgba(20,60,40,.55)}
 .slot .nm.orange{color:#ffb066;border-color:rgba(255,150,70,.6);background:rgba(70,45,20,.55)}
 .slot select.slotsel.sel-green{color:#5ff0a0;border-color:rgba(56,224,138,.5)}
@@ -303,9 +313,25 @@ table.squad input.num{text-align:center;font-family:'DM Mono'}
 .sp-legend span{display:inline-flex;align-items:center;gap:5px}
 .sp-edit{margin-top:16px;border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
 .sp-edit label{font-family:'DM Mono';font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
-.slot .dot.gk{background:var(--amber)}
+.slot .dot.gk{background:radial-gradient(circle at 32% 26%,#ffe9b0,var(--amber) 56%,#d6961d 100%)}
 .slot input{width:84px;text-align:center;font-size:10.5px;padding:3px 4px;background:rgba(8,12,18,.78);border:1px solid rgba(255,255,255,.12);border-radius:5px}
 .slot .role{font-family:'DM Mono';font-size:8px;letter-spacing:1px;color:rgba(255,255,255,.55);text-transform:uppercase}
+.slot .dot .prtg{position:absolute;top:-8px;right:-13px;font-family:'DM Mono';font-size:9px;font-weight:700;color:#fff;border-radius:4px;padding:0 3px;line-height:14px;min-width:15px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.5);border:1px solid rgba(0,0,0,.35);z-index:4}
+.tour-panel{border-color:rgba(216,255,62,.28);background:linear-gradient(180deg,rgba(216,255,62,.045),rgba(13,18,27,.72))}
+.tour-panel .tp-note{font-family:'DM Mono';font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:#8b94a1;border:1px solid #2a3a4a;border-radius:5px;padding:1px 6px;margin-left:4px}
+.tp-rows{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.tp-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:#c7cfd9;padding:5px 0;border-bottom:1px solid #1a1e25}
+.tp-row:last-child{border-bottom:none}
+.tp-res{font-weight:800;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#0a0e14;flex:none}
+.tp-W{background:#3aa86a;color:#fff}.tp-D{background:#c39a36;color:#fff}.tp-L{background:#bf5238;color:#fff}
+.tp-opp{min-width:160px;color:#eef2f7}.tp-opp b{color:#fff}
+.tp-stat b{color:#eef2f7}
+.tp-agg{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#9aa3af;padding:8px 0;border-top:1px solid #232932}
+.tp-agg b{color:#eef2f7}
+.tp-tops{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tp-tops-lab{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#8b94a1;font-weight:700}
+.tp-pl{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#dfe6ef}
+.tp-rt{font-family:'DM Mono';font-size:10px;font-weight:700;color:#fff;border-radius:4px;padding:1px 4px}
 .xi-side .row{display:flex;gap:10px;margin-bottom:12px;align-items:end}
 .slot select.slotsel{width:90px;text-align:center;font-size:10px;padding:3px 4px;background:rgba(8,12,18,.85);border:1px solid rgba(255,255,255,.16);border-radius:5px;color:#fff;appearance:none;background-image:none;padding-right:4px;cursor:pointer}
 .slot select.slotsel:focus{border-color:var(--lime);box-shadow:none}
@@ -459,6 +485,35 @@ table.fdr td.tot{font-size:13px}
 .nm-vs{font-family:'DM Mono';font-size:12px;color:var(--muted);margin:0 2px}
 .nm-foot{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);font-family:'DM Mono'}
 .nm-cta{color:var(--lime)}
+/* ── Modern home / landing polish ── */
+.hero{border:1px solid rgba(255,255,255,.08);box-shadow:0 34px 64px -32px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.06)}
+.hero:after{content:"";position:absolute;inset:-32%;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(38% 50% at 16% 20%,rgba(216,255,62,.22),transparent 70%),
+    radial-gradient(36% 46% at 84% 28%,rgba(86,200,255,.17),transparent 72%),
+    radial-gradient(42% 52% at 60% 98%,rgba(255,195,77,.15),transparent 72%);
+  filter:blur(10px);animation:heroAurora 18s ease-in-out infinite alternate}
+@keyframes heroAurora{0%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(3%,2%,0) scale(1.09)}100%{transform:translate3d(-1%,3%,0) scale(1.04)}}
+.hero>*{position:relative;z-index:1}
+.hero .kicker{display:inline-block;background:rgba(216,255,62,.10);border:1px solid rgba(216,255,62,.30);color:#e6ff9c;padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+.hero h1{background:linear-gradient(92deg,#ffffff,#eef6ff 42%,#cfeaff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 8px 20px rgba(0,0,0,.55))}
+.hero h1 .hl{-webkit-text-fill-color:var(--lime);color:var(--lime);text-shadow:0 0 24px rgba(216,255,62,.55)}
+.cd-box{background:linear-gradient(180deg,rgba(22,30,42,.72),rgba(12,17,26,.66));border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(7px);box-shadow:0 12px 26px -14px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.08);position:relative;overflow:hidden;transition:transform .25s ease}
+.cd-box:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--lime),transparent);opacity:.75}
+.cd-box:hover{transform:translateY(-2px)}
+.cd-box b{background:linear-gradient(180deg,#eaffa0,var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.statcard{background:linear-gradient(180deg,rgba(21,27,37,.64),rgba(13,18,27,.80));border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(6px);overflow:hidden;box-shadow:0 16px 32px -22px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.05);transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s ease,border-color .25s ease}
+.statcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime);opacity:.85;box-shadow:0 0 16px rgba(216,255,62,.5)}
+.statcard:hover{transform:translateY(-4px);box-shadow:0 28px 46px -22px rgba(0,0,0,.8),0 0 0 1px rgba(216,255,62,.14);border-color:rgba(216,255,62,.26)}
+.statcard .val{letter-spacing:.5px}
+/* ── Unified glass/depth across all views ── */
+.group-card,.match,.cheat-card,.tp-item{
+  background:linear-gradient(180deg,rgba(21,27,37,.60),rgba(13,18,27,.80));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 16px 32px -24px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.045);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease,border-color .22s ease}
+.group-card:hover,.cheat-card:hover{transform:translateY(-3px);box-shadow:0 26px 44px -22px rgba(0,0,0,.8),0 0 0 1px rgba(216,255,62,.12);border-color:rgba(216,255,62,.22)}
+.match:hover,.tp-item:hover{transform:translateY(-2px);box-shadow:0 18px 30px -18px rgba(0,0,0,.78),0 0 0 1px rgba(216,255,62,.14);border-color:rgba(216,255,62,.28)}
 .mu-back{background:var(--panel);border:1px solid var(--line);color:var(--muted);font-family:'DM Mono';font-size:12px;padding:7px 13px;border-radius:8px;cursor:pointer;margin-bottom:16px}
 .mu-back:hover{color:var(--txt);border-color:var(--line2)}
 .mu-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin-bottom:4px}
@@ -704,7 +759,9 @@ const SEED_RTG_BETS=[
   {key:"rtg-espcpv-bb-300-20260615", match:"Spain v Cape Verde", sel:"Bet Builder \u00b7 Spain to win (Final Result) \u00b7 Pedri to score or assist", odds:"3.00", stake:"100", status:"lost", book:"Stoiximan"},
   {key:"rtg-espcpv-bb-280-20260615", match:"Spain v Cape Verde", sel:"Bet Builder \u00b7 F. Torres to score or assist \u00b7 HT/FT Spain/Spain \u00b7 Oyarzabal 1+ foul committed", odds:"2.80", stake:"100", status:"lost", book:"bet365"},
   {key:"rtg-frasen-bb-232-20260616", match:"France v Senegal", sel:"Bet Builder \u00b7 Over 1.5 goals \u00b7 France over 4.5 corners \u00b7 both teams carded", odds:"2.32", stake:"100", status:"lost", book:"Stoiximan"},
-  {key:"rtg-porcod-bb-227-20260617", match:"Portugal v DR Congo", sel:"Bet Builder \u00b7 Portugal to win \u00b7 Portugal over 5.5 corners \u00b7 Over 1.5 goals", odds:"2.27", stake:"100", status:"pending", book:"Stoiximan"},
+  {key:"rtg-porcod-bb-227-20260617", match:"Portugal v DR Congo", sel:"Bet Builder \u00b7 Portugal to win \u00b7 Portugal over 5.5 corners \u00b7 Over 1.5 goals", odds:"2.27", stake:"100", status:"lost", book:"Stoiximan"},
+  {key:"rtg-engcro-htft-260-20260617", match:"England v Croatia", sel:"HT/FT \u00b7 England/Croatia", odds:"2.60", stake:"100", status:"lost", book:"Stoiximan"},
+  {key:"rtg-combo-eng-col-gha-20260617", match:"Combo", sel:"England FT + Colombia FT + Ghana FT \u00b7 Eng-Cro 4-2 / Uzb-Col 1-3 / Gha-Pan 1-0", odds:"6.15", stake:"80", status:"won", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
   {key:"brk-swetun-cards2-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (2 legs) \u00b7 Valery + Khedira to be carded", odds:"17.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Valery — to be carded","R. Khedira — to be carded"]},
@@ -732,8 +789,10 @@ const SEED_BRICKS_BETS=[
   {key:"brk-belegy-cards3-20260615", match:"Belgium v Egypt", sel:"Bet Builder (3 legs, +25% boost) \u00b7 Onana + Hany + Lasheen to be carded", odds:"60.00", stake:"5", status:"lost", book:"Stoiximan", legs:["A. Onana (Belgium) — to be carded","M. Hany (Egypt) — to be carded","Moh. Lasheen (Egypt) — to be carded"]},
   {key:"brk-belegy-bb-4500-20260615", match:"Belgium v Egypt", sel:"Bet Builder (7 legs) \u00b7 Doku SoT \u00b7 Marmoush/Onana/Castagne fouls \u00b7 Belgium win \u00b7 Hany carded \u00b7 De Ketelaere to score", odds:"45.00", stake:"10", status:"lost", book:"Stoiximan", legs:["J. Doku — 1+ shot on target","O. Marmoush — 1+ foul committed","A. Onana — 1+ foul committed","T. Castagne — 1+ foul committed","Belgium — final result (win)","M. Hany (Egypt) — to be carded","C. De Ketelaere (Belgium) — to score"]},
   {key:"brk-ksauru-cards2-20260616", match:"Saudi Arabia v Uruguay", sel:"Bet Builder (2 legs) \u00b7 Abdulhamid + Ugarte to be carded", odds:"11.00", stake:"10", status:"lost", book:"bet365", legs:["Saud Abdulhamid (Saudi Arabia) — to be carded","Manuel Ugarte (Uruguay) — to be carded"]},
-  {key:"brk-porcod-pen-435-20260617", match:"Portugal v DR Congo", sel:"Team to score a penalty \u00b7 Portugal", odds:"4.35", stake:"30", status:"pending", book:"Stoiximan", legs:["Portugal — team to score a penalty"]},
-  {key:"brk-porcod-bb-1700-20260617", match:"Portugal v DR Congo", sel:"Bet Builder (8 legs) \u00b7 Over 2.5 goals + corners/cards + Bakambu/Fernandes/Masuaku props", odds:"17.00", stake:"10", status:"pending", book:"Stoiximan", legs:["Over 2.5 goals","Over 8.5 total corners","DR Congo over 2.5 corners","Over 2.5 total cards","DR Congo over 6.5 shots","Bakambu (DR Congo) — 2+ shots","Bruno Fernandes (Portugal) — 1+ foul won","Masuaku (DR Congo) — 1+ foul committed"]},
+  {key:"brk-porcod-pen-435-20260617", match:"Portugal v DR Congo", sel:"Team to score a penalty \u00b7 Portugal", odds:"4.35", stake:"30", status:"lost", book:"Stoiximan", legs:["Portugal — team to score a penalty"]},
+  {key:"brk-porcod-bb-1700-20260617", match:"Portugal v DR Congo", sel:"Bet Builder (8 legs) \u00b7 Over 2.5 goals + corners/cards + Bakambu/Fernandes/Masuaku props", odds:"17.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Over 2.5 goals","Over 8.5 total corners","DR Congo over 2.5 corners","Over 2.5 total cards","DR Congo over 6.5 shots","Bakambu (DR Congo) — 2+ shots","Bruno Fernandes (Portugal) — 1+ foul won","Masuaku (DR Congo) — 1+ foul committed"]},
+  {key:"brk-uzbcol-bb-1125-20260617", match:"Uzbekistan v Colombia", sel:"Bet Builder (7 legs) \u00b7 Colombia -1 + James/Díaz assist + shot/foul props", odds:"11.25", stake:"24.63", status:"lost", book:"Stoiximan", legs:["Colombia -1 (handicap final result)","James Rodríguez or Luis Díaz — 1+ assist","Igor Sergeev — 2+ shots (Golden Sub, was Shomurodov)","Abbosbek Fayzullaev — 1+ shots","Cucho Hernández — 3+ shots (Golden Sub, was L. Suárez)","Gustavo Puerta — 1+ fouls committed","J. Cabal — 4+ fouls won (Golden Sub)"]},
+  {key:"brk-ghapan-bb-2700-20260617", match:"Ghana v Panama", sel:"Bet Builder (7 legs) \u00b7 BTA shots + props + Semenyo to score + Over 2.5", odds:"27.00", stake:"10", status:"lost", book:"Stoiximan", legs:["Brandon Thomas-Asante — 1+ shots on target (Golden Sub, was K. Sulemana)","T. Ayew — 2+ fouls won","K. Harvey — 1+ shots","J. Fajardo — 2+ shots (Golden Sub, was S. Waterman)","Michael Murillo — 1+ fouls won","Antoine Semenyo (Ghana) — to score","Over 2.5 goals"]},
 ];
 const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08/06 (group bets)","stake":"1","status":"pending","legs":[
 {"match":"Mexico v South Africa (Grp A)","sel":"Winner & 4th: Mexico 1st, S. Africa 4th","odds":"3.15"},
@@ -893,7 +952,19 @@ const SEED_UPDATES=[
 {"id":"ALG","key":"alg-xi-actual-20260616","xi":{"formation":"4-3-3","names":["Zidane","Aït-Nouri","Bensebaini","Mandi","Belghali","Maza","Bentaleb","Boudaoui","Chaibi","Gouiri","Moussa"]}},
 {"id":"AUT","key":"aut-xi-actual-20260616","xi":{"formation":"4-2-3-1","names":["A. Schlager","Posch","Lienhart","Alaba","Mwene","Seiwald","X. Schlager","Schmid","Laimer","Sabitzer","Kalajdžić"]}},
 {"id":"JOR","key":"jor-xi-actual-20260616","xi":{"formation":"3-4-2-1","names":["Abu Laila","Abualnadi","Al-Arab","Nasib","Taha","Al Rawabdeh","Al-Rashdan","Haddad","Olwan","Fakhouri","Tamari"]}},
-{"id":"POR","key":"por-sorareinside-20260617","xi":{"formation":"4-3-3","names":["Diogo Costa","Nuno Mendes","Renato Veiga","Tomás Araújo","Cancelo","João Neves","Bruno Fernandes","Vitinha","João Félix","Ronaldo","Bernardo Silva"]}}
+{"id":"POR","key":"por-sorareinside-20260617","xi":{"formation":"4-3-3","names":["Diogo Costa","Nuno Mendes","Renato Veiga","Tomás Araújo","Cancelo","João Neves","Bruno Fernandes","Vitinha","João Félix","Ronaldo","Bernardo Silva"]}},
+{"id":"POR","key":"por-xi-actual-20260617","xi":{"formation":"4-2-3-1","names":["Diogo Costa","Cancelo","Tomás Araújo","Renato Veiga","Nuno Mendes","João Neves","Vitinha","Bernardo Silva","Bruno Fernandes","Pedro Neto","Ronaldo"]}},
+{"id":"COD","key":"cod-xi-actual-20260617","xi":{"formation":"5-3-2","names":["Mpasi","Masuaku","Kapuadi","Tuanzebe","Mbemba","Wan-Bissaka","E.Kayembe","Moutoussamy","Mukau","Bakambu","Wissa"]}},
+{"id":"ENG","key":"eng-xi-actual-20260617","xi":{"formation":"4-2-3-1","names":["Pickford","James","Konsa","Stones","O'Reilly","Anderson","Rice","Madueke","Bellingham","Gordon","Kane"]}},
+{"id":"CRO","key":"cro-xi-actual-20260617","xi":{"formation":"3-4-2-1","names":["Livakovic","Gvardiol","Vuskovic","Sutalo","Perisic","Pasalic","Modric","Stanisic","Baturina","P.Sucic","Musa"]}},
+{"id":"UZB","key":"uzb-xi-actual-20260617","xi":{"formation":"3-4-2-1","names":["Yusupov","Khusanov","Abdullaev","Ashurmatov","Karimov","Mozgovoy","Shukurov","Nasrullaev","Fayzullaev","Urunov","Shomurodov"]}},
+{"id":"COL","key":"col-xi-actual-20260617","xi":{"formation":"4-3-3","names":["Vargas","Mojica","Lucumi","Sanchez","Munoz","Arias","Lerma","Puerta","Luis Diaz","Luis Suarez","James"]}},
+{"id":"GHA","key":"gha-xi-actual-20260617","xi":{"formation":"4-4-1-1","names":["Ati-Zigi","Senaya","Adjetey","Opoku","Mensah","Nuamah","Yirenkyi","Owusu","Semenyo","Sulemana","Ayew"]}},
+{"id":"PAN","key":"pan-xi-actual-20260617","xi":{"formation":"3-4-3","names":["Mosquera","Andrade","Cordoba","Ramos","Blackman","Barcenas","Harvey","Murillo","Rodriguez","Waterman","C. Martinez"]}},
+{"id":"KOR","key":"kor-xi-actual-20260611","xi":{"formation":"3-4-2-1","names":["Kim Seung-gyu","Lee Kihyuk","Kim Minjae","Lee Hanbeom","Lee Taeseok","Hwang Inbeom","Lee Kangin","Seol Youngwoo","Lee Jaesung","Paik Seungho","Son Heungmin"]}},
+{"id":"CZE","key":"cze-xi-actual-20260611","xi":{"formation":"3-4-2-1","names":["Kovar","Chaloupek","Hranac","Krejci","Coufal","Soucek","Sojka","Zeleny","Provod","Sulc","Schick"]}},
+{"id":"MEX","key":"mex-xi-actual-20260611","xi":{"formation":"4-1-4-1","names":["Rangel","Gallardo","Montes","Gutierrez","Reyes","Lira","Quinones","Vasquez","Fidalgo","Alvarado","Jimenez"]}},
+{"id":"RSA","key":"rsa-xi-actual-20260611","xi":{"formation":"5-3-2","names":["Williams","Mudau","Sibisi","Okon","Mbokazi","Modiba","Mokoena","Sithole","Adams","Rayners","Foster"]}}
 ];
 
 const SRC_DATES={}; (typeof SEED_UPDATES!=="undefined"?SEED_UPDATES:[]).forEach(u=>{const m=(u.key||"").match(/(\d{4})(\d{2})(\d{2})$/); if(m) SRC_DATES[u.id]=m[1]+"-"+m[2]+"-"+m[3];});
@@ -1453,7 +1524,8 @@ function viewRefs(){
   .ref-sort.on{background:#2a3340;color:#dfe6ef;border-color:#3b4654}
   .ref-search{flex:1;min-width:160px;background:#14171d;border:1px solid #2c323d;border-radius:8px;color:#e6ebf2;padding:8px 12px;font-size:13px}
   .ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px}
-  .ref-card{background:#14171d;border:1px solid #232932;border-radius:12px;padding:14px}
+  .ref-card{background:linear-gradient(180deg,rgba(24,30,40,.66),rgba(15,19,27,.82));border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:14px;box-shadow:0 16px 30px -22px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.05);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease,border-color .22s ease}
+  .ref-card:hover{transform:translateY(-3px);box-shadow:0 26px 42px -22px rgba(0,0,0,.8),0 0 0 1px rgba(216,255,62,.12);border-color:rgba(216,255,62,.22)}
   .ref-top{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
   .ref-fl{font-size:24px;line-height:1.1}
   .ref-nm{font-weight:700;color:#eef2f7;font-size:14px;line-height:1.2}
@@ -1479,6 +1551,15 @@ function viewRefs(){
   </div>`;
 }
 
+/* Tournament-only performance log (WC 2026). Per team: one record per WC game played.
+   Used for tournament stats/ratings section + player ratings on the lineup pitch.
+   Excludes friendlies/qualifiers — this is live-tournament form only. */
+const TOURSTATS = {
+  "KOR":[{mid:"m1",opp:"CZE",h:true,gf:2,ga:1,poss:62,xgF:2.30,xgA:0.83,bigCh:4,bigChA:1,shots:15,shotsA:7,corners:4,cornersA:5,fouls:9,foulsA:16,cards:1,cardsA:0,dist:104.2,distA:108.3,ratings:{"Kim Seung-gyu":7.3,"Lee Kihyuk":6.9,"Kim Minjae":6.9,"Lee Hanbeom":6.8,"Lee Taeseok":7.2,"Hwang Inbeom":8.6,"Lee Kangin":8.2,"Seol Youngwoo":6.6,"Lee Jaesung":8.5,"Paik Seungho":7.1,"Son Heungmin":8.8}}],
+  "CZE":[{mid:"m1",opp:"KOR",h:false,gf:1,ga:2,poss:38,xgF:0.83,xgA:2.30,bigCh:1,bigChA:4,shots:7,shotsA:15,corners:5,cornersA:4,fouls:16,foulsA:9,cards:0,cardsA:1,dist:108.3,distA:104.2,ratings:{"Kovar":7.0,"Chaloupek":5.9,"Hranac":8.3,"Krejci":7.1,"Coufal":6.4,"Soucek":6.6,"Sojka":5.7,"Zeleny":6.6,"Provod":6.5,"Sulc":6.7,"Schick":8.4}}],
+  "MEX":[{mid:"m0",opp:"RSA",h:true,gf:2,ga:0,poss:61,xgF:1.46,xgA:0.07,bigCh:2,bigChA:0,shots:16,shotsA:3,corners:3,cornersA:1,fouls:12,foulsA:11,cards:1,cardsA:2,reds:1,redsA:2,dist:91.8,distA:85.9,ratings:{"Rangel":7.3,"Gallardo":6.9,"Montes":8.8,"Gutierrez":8.9,"Reyes":7.2,"Lira":7.4,"Quinones":8.6,"Vasquez":8.9,"Fidalgo":7.1,"Alvarado":8.2,"Jimenez":7.5}}],
+  "RSA":[{mid:"m0",opp:"MEX",h:false,gf:0,ga:2,poss:39,xgF:0.07,xgA:1.46,bigCh:0,bigChA:2,shots:3,shotsA:16,corners:1,cornersA:3,fouls:11,foulsA:12,cards:2,cardsA:1,reds:2,redsA:1,dist:85.9,distA:91.8,ratings:{"Williams":8.3,"Mudau":8.5,"Sibisi":6.0,"Okon":6.3,"Mbokazi":6.4,"Modiba":5.9,"Mokoena":4.5,"Sithole":4.9,"Adams":6.6,"Rayners":6.1,"Foster":5.9}}]
+};
 const FORMATIONS = {
   "4-3-3":[["GK",50,90],["RB",82,72],["CB",62,76],["CB",38,76],["LB",18,72],["CM",70,52],["CM",50,56],["CM",30,52],["RW",80,24],["ST",50,16],["LW",20,24]],
   "4-4-2":[["GK",50,90],["RB",82,72],["CB",62,76],["CB",38,76],["LB",18,72],["RM",82,46],["CM",60,50],["CM",40,50],["LM",18,46],["ST",62,18],["ST",38,18]],
@@ -2077,6 +2158,59 @@ async function loadAll(){
     if(!done){
       const cur=state.fixtures.m49||{hs:"",as:"",pred:"",note:""};
       if(cur.hs!=="1"||cur.as!=="4"){ cur.hs="1"; cur.as="4"; state.fixtures.m49=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Uzbekistan 1-3 Colombia (m61) Group K — 17/06 (Fayzullaev 60' / Muñoz 40', L.Díaz 65', Campaz 90'+9)
+  {
+    const fk="wc2026:upd:results-uzbcol-20260617"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m61||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="1"||cur.as!=="3"){ cur.hs="1"; cur.as="3"; state.fixtures.m61=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Ghana 1-0 Panama (m67) Group L — 17/06 (Yirenkyi 90'+5)
+  {
+    const fk="wc2026:upd:results-ghapan-20260617"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m67||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="1"||cur.as!=="0"){ cur.hs="1"; cur.as="0"; state.fixtures.m67=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: England 4-2 Croatia (m66) Group L — 17/06 (Kane 12'pen,42', Bellingham 47', Rashford 85' / Baturina 36', Musa 45'+5)
+  {
+    const fk="wc2026:upd:results-engcro-20260617"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m66||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="4"||cur.as!=="2"){ cur.hs="4"; cur.as="2"; state.fixtures.m66=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: Portugal 1-1 DR Congo (m60) Group K — 17/06 (Neves 6' / Wissa 45'+5)
+  {
+    const fk="wc2026:upd:results-porcod-20260617"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m60||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="1"||cur.as!=="1"){ cur.hs="1"; cur.as="1"; state.fixtures.m60=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: settle Portugal v DR Congo bets LOST (drew 1-1: no Por win, no Por pen, under 2.5 goals) — 17/06
+  {
+    const fk="wc2026:upd:settle-porcod-20260617"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      let chR=false, chB=false;
+      (state.rtg.bets||[]).forEach(b=>{ if(b.match==="Portugal v DR Congo" && b.status==="pending"){ b.status="lost"; chR=true; } });
+      (state.bricks.bets||[]).forEach(b=>{ if(b.match==="Portugal v DR Congo" && b.status==="pending"){ b.status="lost"; chB=true; } });
+      if(chR) doSave("rtg");
+      if(chB) doSave("bricks");
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
@@ -3557,7 +3691,9 @@ function viewMatchup(){
       const cur=names[i]||"";
       const dotTxt=cur?(numFor(cur)||(i+1)):(c[0]==='GK'?'GK':i+1);
       const du=dutyEmoji(td,cur);
-      const dot=`<div class="dot ${c[0]==='GK'?'gk':''}">${du?`<span class="duties">${du}</span>`:''}${esc(String(dotTxt))}</div>`;
+      const pr=playerRating(id,cur);
+      const prtg=pr?`<span class="prtg" style="background:${TOUR_RC(pr)}">${(+pr).toFixed(1)}</span>`:'';
+      const dot=`<div class="dot ${c[0]==='GK'?'gk':''}">${du?`<span class="duties">${du}</span>`:''}${prtg}${esc(String(dotTxt))}</div>`;
       return `<div class="slot" style="left:${c[1]}%;top:${c[2]}%">${dot}<div class="nm">${esc(cur||'—')}</div><div class="role">${c[0]}</div></div>`;
     }).join("");
     return `<div class="mu-pitch-col"><div class="mu-xi-head" data-team="${id}">${flag(id)}<span>${esc(TEAM[id].name)}</span>${relBadge(id)}<span class="form">${esc(form)}</span></div><div class="pitch"><div class="midline"></div><div class="center"></div>${slots}</div><div class="sp-legend" style="margin-top:8px;justify-content:center"><span>🎯 Pen</span><span>🧱 FK</span><span>🚩 Corner</span><span>🥅 Target</span></div></div>`;
@@ -3703,6 +3839,38 @@ function squadView(id){
     <tbody>${rows||'<tr><td colspan="11" class="empty">No players yet — add your first call-up.</td></tr>'}</tbody></table></div>
   </div>`;
 }
+/* ── Tournament stats / ratings ── */
+const TOUR_RC=r=>{r=+r;if(!r)return '#39424d';if(r>=7.5)return '#16955a';if(r>=7.0)return '#3aa86a';if(r>=6.5)return '#c39a36';return '#bf5238';};
+function tourGames(id){return (typeof TOURSTATS!=='undefined'&&TOURSTATS[id])?TOURSTATS[id]:[];}
+function playerRating(id,name){if(!name)return null;const g=tourGames(id);for(let i=g.length-1;i>=0;i--){if(g[i].ratings&&g[i].ratings[name]!=null)return g[i].ratings[name];}return null;}
+function tourAgg(id){const g=tourGames(id);if(!g.length)return null;const n=g.length;const sum=k=>g.reduce((a,x)=>a+(+x[k]||0),0);const avg=k=>sum(k)/n;let rs=[];g.forEach(x=>{if(x.ratings)Object.values(x.ratings).forEach(v=>rs.push(+v));});const teamRating=rs.length?rs.reduce((a,b)=>a+b,0)/rs.length:null;return {n,gf:sum('gf'),ga:sum('ga'),xgF:avg('xgF'),xgA:avg('xgA'),poss:avg('poss'),shots:avg('shots'),shotsA:avg('shotsA'),bigCh:avg('bigCh'),bigChA:avg('bigChA'),corners:avg('corners'),cornersA:avg('cornersA'),cards:avg('cards'),teamRating};}
+function topRatings(id,k){const g=tourGames(id);const last=g[g.length-1];if(!last||!last.ratings)return [];return Object.entries(last.ratings).sort((a,b)=>b[1]-a[1]).slice(0,k||3);}
+function tourPanel(id){
+  const g=tourGames(id); if(!g.length) return '';
+  const ag=tourAgg(id);
+  const rows=g.map(m=>{
+    const res=(m.gf>m.ga?'W':m.gf<m.ga?'L':'D');
+    return `<div class="tp-row">
+      <span class="tp-res tp-${res}">${res}</span>
+      <span class="tp-opp">${m.h?'vs':'@'} ${flag(m.opp)} ${esc(TEAM[m.opp]?TEAM[m.opp].name:m.opp)} <b>${m.gf}-${m.ga}</b></span>
+      <span class="tp-stat">xG <b>${(+m.xgF).toFixed(2)}</b>–${(+m.xgA).toFixed(2)}</span>
+      <span class="tp-stat">Sh <b>${m.shots}</b>–${m.shotsA}</span>
+      <span class="tp-stat">BigCh <b>${m.bigCh}</b>–${m.bigChA}</span>
+      <span class="tp-stat">Pos <b>${m.poss}%</b></span>
+    </div>`;
+  }).join("");
+  const tops=topRatings(id,3).map(([n,r])=>`<span class="tp-pl"><span class="tp-rt" style="background:${TOUR_RC(r)}">${(+r).toFixed(1)}</span>${esc(n)}</span>`).join("");
+  return `<div class="panel tour-panel">
+    <div class="kicker" style="margin-bottom:8px">🏆 Tournament performance · <b style="color:var(--lime)">${ag.n} game${ag.n>1?'s':''}</b> <span class="tp-note">WC only — no friendlies/quals</span></div>
+    <div class="tp-rows">${rows}</div>
+    <div class="tp-agg">
+      <span>Avg xG <b style="color:var(--lime)">${ag.xgF.toFixed(2)}</b> for · <b>${ag.xgA.toFixed(2)}</b> against</span>
+      <span>Shots <b>${ag.shots.toFixed(1)}</b> · Big ch <b>${ag.bigCh.toFixed(1)}</b> · Corners <b>${ag.corners.toFixed(1)}</b></span>
+      <span>Poss <b>${ag.poss.toFixed(0)}%</b> · Team rating <b style="color:${TOUR_RC(ag.teamRating)}">${ag.teamRating?ag.teamRating.toFixed(2):'—'}</b></span>
+    </div>
+    <div class="tp-tops"><span class="tp-tops-lab">Top rated:</span>${tops}</div>
+  </div>`;
+}
 function dutyEmoji(td,name){if(!name||!td.setp)return "";let s="";if(td.setp.pens&&td.setp.pens.includes(name))s+="🎯";if(td.setp.fks&&td.setp.fks.includes(name))s+="🧱";if(td.setp.corners&&td.setp.corners.includes(name))s+="🚩";if(td.setp.target&&td.setp.target.includes(name))s+="🥅";return s;}
 function xiView(id){
   const td=getTeam(id);
@@ -3722,7 +3890,9 @@ function xiView(id){
     const cur=showObj.names[i]||"";
     const dotTxt=cur?(numFor(cur)||(i+1)):(c[0]==='GK'?'GK':i+1);
     const du=dutyEmoji(td,cur);
-    const dot=`<div class="dot ${c[0]==='GK'?'gk':''}">${du?`<span class="duties">${du}</span>`:''}${esc(String(dotTxt))}</div>`;
+    const pr=playerRating(id,cur);
+    const prtg=pr?`<span class="prtg" style="background:${TOUR_RC(pr)}">${(+pr).toFixed(1)}</span>`:'';
+    const dot=`<div class="dot ${c[0]==='GK'?'gk':''}">${du?`<span class="duties">${du}</span>`:''}${prtg}${esc(String(dotTxt))}</div>`;
     let control;
     if(mode==="compare"){
       const cls=cur?(B.has(cur)?'green':'orange'):'';
@@ -3771,6 +3941,7 @@ function xiView(id){
     <textarea data-teamnote placeholder="Probable-XI doubts, injuries, set-piece notes, source…">${esc(td.note||'')}</textarea>
   </div>
   ${getForm(id).length?`<div class="panel form-panel"><div class="kicker" style="margin-bottom:10px">📈 Recent form ${formPills(id)}</div>${recentResults(id)}</div>`:''}
+  ${tourPanel(id)}
   <div class="xi-wrap">
     <div>
       ${tabs}
