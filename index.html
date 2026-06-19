@@ -766,6 +766,9 @@ const SEED_RTG_BETS=[
   {key:"rtg-suibih-bb-220-20260618", match:"Switzerland v Bosnia & Herz.", sel:"Bet Builder \u00b7 Over 2.5 match cards \u00b7 Over 7 corners", odds:"2.20", stake:"100", status:"won", book:"Stoiximan"},
   {key:"rtg-canqat-bb-222-20260618", match:"Canada v Qatar", sel:"Bet Builder \u00b7 Over 2.5 match cards \u00b7 Canada to win \u00b7 Over 1.5 goals", odds:"2.22", stake:"100", status:"won", book:"Stoiximan"},
   {key:"rtg-mexkor-bb-215-20260618", match:"Mexico v South Korea", sel:"Bet Builder \u00b7 1X (Mexico/draw) \u00b7 Over 1.5 goals \u00b7 Mexico o0.5 cards", odds:"2.15", stake:"100", status:"lost", book:"Stoiximan"},
+  {key:"rtg-usaaus-bb-230-20260619", match:"United States v Australia", sel:"Bet Builder \u00b7 USA to win \u00b7 Balogun 1+ shot on target \u00b7 Over 1.5 goals (super boost)", odds:"2.30", stake:"100", status:"lost", book:"Stoiximan"},
+  {key:"rtg-scomar-diaz-237-20260619", match:"Scotland v Morocco", sel:"Brahim D\u00edaz to score or assist (super sub)", odds:"2.375", stake:"100", status:"pending", book:"Stoiximan"},
+  {key:"rtg-scomar-bb-210-20260619", match:"Scotland v Morocco", sel:"Bet Builder \u00b7 Morocco to win \u00b7 Over 1.5 goals", odds:"2.10", stake:"100", status:"pending", book:"Stoiximan"},
 ];
 const SEED_BRICKS_BETS=[
   {key:"brk-swetun-cards2-20260615", match:"Sweden v Tunisia", sel:"Bet Builder (2 legs) \u00b7 Valery + Khedira to be carded", odds:"17.00", stake:"5", status:"lost", book:"bet365", legs:["Y. Valery — to be carded","R. Khedira — to be carded"]},
@@ -804,6 +807,7 @@ const SEED_BRICKS_BETS=[
   {key:"brk-canqat-bb-540-20260618", match:"Canada v Qatar", sel:"Bet Builder (4 legs) \u00b7 HT/FT Canada + Canada -1 + Larin to score + Qatar o1.5 cards \u00b7 cashed out \u20ac52.45", odds:"5.40", stake:"10", status:"cashout", co:"52.45", book:"Stoiximan", legs:["HT/FT Canada/Canada","Canada -1 (handicap final result)","Cyle Larin (Canada) — to score","Qatar over 1.5 cards"]},
   {key:"brk-mexkor-bb-1150boost-20260618", match:"Mexico v South Korea", sel:"Bet Builder (3 legs) \u00b7 Mexico to win + Jim\u00e9nez to score + Mexico -0.5 cards \u00b7 11.50 +25% boost \u2192 \u20ac141.25 ret", odds:"14.125", stake:"10", status:"lost", book:"Stoiximan", co:"", legs:["Mexico — final result (win)","Ra\u00fal Jim\u00e9nez (Mexico) — to score","Mexico -0.5 cards (handicap)"]},
   {key:"brk-mexkor-cards-4500-20260618", match:"Mexico v South Korea", sel:"Bet Builder (2 legs) \u00b7 Lira to be booked + Gallardo to be booked", odds:"45.00", stake:"10", status:"lost", book:"Stoiximan", co:"", legs:["Erik Lira (Mexico) — to be booked","Jes\u00fas Gallardo (Mexico) — to be booked"]},
+  {key:"brk-usaaus-bb-300-20260619", match:"United States v Australia", sel:"Bet Builder (3 legs) \u00b7 USA win + USA most shots on target + USA most shots \u00b7 super boost 2.10\u21923.00", odds:"3.00", stake:"10", status:"lost", book:"Stoiximan", co:"", legs:["Final result — USA (won, early payout)","USA — most shots on target (failed)","USA — most total shots (won)"]},
 ];
 const SEED_PARLAYS=[{"id":"sb20033175850","ready":true,"label":"Parlay No1 · 08/06 (group bets)","stake":"1","status":"pending","legs":[
 {"match":"Mexico v South Africa (Grp A)","sel":"Winner & 4th: Mexico 1st, S. Africa 4th","odds":"3.15"},
@@ -983,7 +987,9 @@ const SEED_UPDATES=[
 {"id":"CAN","key":"can-xi-actual-20260618","xi":{"formation":"4-4-2","names":["Crepeau","Johnston","De Fougerolles","Cornelius","Laryea","Buchanan","Kone","Eustaquio","Ahmed","J. David","Larin"]}},
 {"id":"QAT","key":"qat-xi-actual-20260618","xi":{"formation":"4-3-3","names":["Abunada","Al Oui","Khoukhi","Miguel","Al-Amin","Laye","Madibo","Abdulsallam","Junior","Abdurisag","Afif"]}},
 {"id":"MEX","key":"mex-xi-actual-20260618","xi":{"formation":"4-3-3","names":["Rangel","Sanchez","Alvarez","Vasquez","Gallardo","Gutierrez","Lira","Romo","Alvarado","Jimenez","Quinones"]}},
-{"id":"KOR","key":"kor-xi-actual-20260618","xi":{"formation":"3-4-2-1","names":["Kim Seung-gyu","Lee Kihyuk","Kim Minjae","Lee Hanbeom","Seol Youngwoo","Paik Seungho","Hwang Inbeom","Kim Moonhwan","Lee Jaesung","Lee Kangin","Son Heungmin"]}}
+{"id":"KOR","key":"kor-xi-actual-20260618","xi":{"formation":"3-4-2-1","names":["Kim Seung-gyu","Lee Kihyuk","Kim Minjae","Lee Hanbeom","Seol Youngwoo","Paik Seungho","Hwang Inbeom","Kim Moonhwan","Lee Jaesung","Lee Kangin","Son Heungmin"]}},
+{"id":"USA","key":"usa-xi-actual-20260619","xi":{"formation":"3-5-2","names":["Freese","Freeman","Richards","Ream","Dest","McKennie","Adams","Tillman","A. Robinson","Balogun","Pepi"]}},
+{"id":"AUS","key":"aus-xi-actual-20260619","xi":{"formation":"5-4-1","names":["Beach","Italiano","Circati","Souttar","Burgess","Bos","Leckie","O'Neill","Okon-Engstler","Velupillay","Toure"]}}
 ];
 
 const SRC_DATES={}; (typeof SEED_UPDATES!=="undefined"?SEED_UPDATES:[]).forEach(u=>{const m=(u.key||"").match(/(\d{4})(\d{2})(\d{2})$/); if(m) SRC_DATES[u.id]=m[1]+"-"+m[2]+"-"+m[3];});
@@ -1581,7 +1587,9 @@ const TOURSTATS = {
   "SUI":[{mid:"m8",opp:"BIH",h:true,gf:4,ga:1,poss:62,xgF:2.01,xgA:0.24,bigCh:3,bigChA:0,shots:13,shotsA:5,corners:7,cornersA:3,fouls:7,foulsA:18,cards:1,cardsA:2,reds:0,redsA:1,ratings:{"Kobel":5.9,"Widmer":6.4,"Elvedi":6.8,"Akanji":7.8,"Rodriguez":6.5,"Freuler":7.4,"Xhaka":8.1,"Rieder":7.1,"Aebischer":6.9,"Embolo":7.4,"Ndoye":6.5}}],
   "BIH":[{mid:"m8",opp:"SUI",h:false,gf:1,ga:4,poss:38,xgF:0.24,xgA:2.01,bigCh:0,bigChA:3,shots:5,shotsA:13,corners:3,cornersA:7,fouls:18,foulsA:7,cards:2,cardsA:1,reds:1,redsA:0,ratings:{"Vasilj":5.4,"Dedic":5.8,"Katic":6.3,"Muharemovic":6.2,"Kolasinac":5.6,"Memic":5.9,"Tahirovic":6.1,"Sunjic":6.4,"Alajbegovic":6.1,"Dzeko":6.6,"Demirovic":6.3}}],
   "CAN":[{mid:"m9",opp:"QAT",h:true,gf:6,ga:0,poss:78,xgF:4.46,xgA:0.18,bigCh:6,bigChA:0,shots:33,shotsA:2,corners:19,cornersA:1,fouls:9,foulsA:10,cards:1,cardsA:1,reds:0,redsA:0,ratings:{"Crepeau":6.6,"Johnston":8.6,"De Fougerolles":7.3,"Cornelius":6.6,"Laryea":8.8,"Buchanan":7.9,"Kone":7.5,"Eustaquio":8.6,"Ahmed":7.3,"J. David":9.0,"Larin":6.5}}],
-  "QAT":[{mid:"m9",opp:"CAN",h:false,gf:0,ga:6,poss:22,xgF:0.18,xgA:4.46,bigCh:0,bigChA:6,shots:2,shotsA:33,corners:1,cornersA:19,fouls:10,foulsA:9,cards:1,cardsA:1,reds:0,redsA:0,ratings:{"Abunada":6.2,"Al Oui":5.6,"Khoukhi":6.8,"Miguel":6.8,"Al-Amin":4.4,"Laye":6.8,"Madibo":5.6,"Abdulsallam":6.5,"Junior":6.5,"Abdurisag":6.5,"Afif":7.5}}]
+  "QAT":[{mid:"m9",opp:"CAN",h:false,gf:0,ga:6,poss:22,xgF:0.18,xgA:4.46,bigCh:0,bigChA:6,shots:2,shotsA:33,corners:1,cornersA:19,fouls:10,foulsA:9,cards:1,cardsA:1,reds:0,redsA:0,ratings:{"Abunada":6.2,"Al Oui":5.6,"Khoukhi":6.8,"Miguel":6.8,"Al-Amin":4.4,"Laye":6.8,"Madibo":5.6,"Abdulsallam":6.5,"Junior":6.5,"Abdurisag":6.5,"Afif":7.5}}],
+  "USA":[{mid:"m20",opp:"AUS",h:true,gf:2,ga:0,poss:60,xgF:1.30,xgA:0.44,bigCh:1,bigChA:0,shots:10,shotsA:5,corners:7,cornersA:4,fouls:12,foulsA:16,cards:3,cardsA:4,reds:0,redsA:0,ratings:{"Freese":6.8,"Freeman":8.3,"Richards":7.3,"Ream":7.0,"Dest":7.0,"McKennie":6.9,"Adams":7.0,"Tillman":7.7,"A. Robinson":7.2,"Balogun":6.4,"Pepi":6.3}}],
+  "AUS":[{mid:"m20",opp:"USA",h:false,gf:0,ga:2,poss:40,xgF:0.44,xgA:1.30,bigCh:0,bigChA:1,shots:5,shotsA:10,corners:4,cornersA:7,fouls:16,foulsA:12,cards:4,cardsA:3,reds:0,redsA:0,ratings:{"Beach":6.5,"Italiano":5.9,"Circati":7.4,"Souttar":6.3,"Burgess":5.5,"Bos":6.5,"Leckie":6.3,"O'Neill":6.7,"Okon-Engstler":6.7,"Velupillay":6.1,"Toure":6.7}}]
 };
 const FORMATIONS = {
   "4-3-3":[["GK",50,90],["RB",82,72],["CB",62,76],["CB",38,76],["LB",18,72],["CM",70,52],["CM",50,56],["CM",30,52],["RW",80,24],["ST",50,16],["LW",20,24]],
@@ -2181,6 +2189,16 @@ async function loadAll(){
     if(!done){
       const cur=state.fixtures.m49||{hs:"",as:"",pred:"",note:""};
       if(cur.hs!=="1"||cur.as!=="4"){ cur.hs="1"; cur.as="4"; state.fixtures.m49=cur; doSave("fixtures"); }
+      try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
+    }
+  }
+  // one-time: USA 2-0 Australia (m20) Group D — 19/06 (Burgess 11' OG, Freeman 43')
+  {
+    const fk="wc2026:upd:results-usaaus-20260619"; let done=false;
+    try{ if(window.storage&&window.storage.get){ const r=await window.storage.get(fk,false); done=!!(r&&r.value); } else { done=!!localStorage.getItem(fk); } }catch(_){}
+    if(!done){
+      const cur=state.fixtures.m20||{hs:"",as:"",pred:"",note:""};
+      if(cur.hs!=="2"||cur.as!=="0"){ cur.hs="2"; cur.as="0"; state.fixtures.m20=cur; doSave("fixtures"); }
       try{ if(window.storage&&window.storage.set){ await window.storage.set(fk,"1",false); } else { localStorage.setItem(fk,"1"); } }catch(_){}
     }
   }
